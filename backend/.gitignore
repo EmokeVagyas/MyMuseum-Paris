@@ -1,0 +1,59 @@
+# Binary files and executables
+bin/
+obj/
+bin-x64/
+bin-x86/
+bin-AnyCPU/
+node_modules/
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+
+# Visual Studio files
+.vscode/
+.vs/
+*.suo
+*.user
+*.sln.docstates
+ipch/
+[Tt]humbs.db
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# Visual Studio Code files
+.vscode/
+*.suo
+*.user
+*.suo
+
+# Project files
+*.user
+*.suo
+*.sln.docstates
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs and temporary files
+logs/
+temp/
+*.swp
+*~
+
+# Build results
+[Tt]est[Rr]esult*/
+*.tlog
+
+# Rider IDE files
+.idea/
+
+# Visual Studio 2022 files
+.vs2022
+
+# Production AppSettings
+appsettings.Production.json
