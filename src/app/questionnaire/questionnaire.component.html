@@ -1,0 +1,67 @@
+<div class="questionnaire-container">
+  <h2>Questionnaire</h2>
+
+  <!-- Question Display -->
+  <div class="question-box">
+    <p>{{ questions[currentStep].question }}</p>
+
+    <!-- Dynamic Form Elements -->
+    <!-- Radio Options -->
+    <ng-container *ngIf="questions[currentStep]?.type === 'radio'">
+      <div *ngFor="let option of questions[currentStep]?.options" class="option">
+        <input
+          type="radio"
+          [id]="questions[currentStep].controlName + option"
+          [value]="option"
+          [formControlName]="questions[currentStep].controlName"
+          (change)="handleNextStep(option)"
+        />
+        <label [for]="questions[currentStep].controlName + option">{{ option }}</label>
+      </div>
+    </ng-container>
+
+    <!-- Checkbox Options -->
+    <ng-container *ngIf="questions[currentStep]?.type === 'checkbox'">
+      <div *ngFor="let option of questions[currentStep]?.options" class="option">
+        <input
+          type="checkbox"
+          [id]="questions[currentStep].controlName + option"
+          [value]="option"
+          [formControlName]="questions[currentStep].controlName"
+        />
+        <label [for]="questions[currentStep].controlName + option">{{ option }}</label>
+      </div>
+    </ng-container>
+
+    <!-- Number Input -->
+    <ng-container *ngIf="questions[currentStep]?.type === 'number'">
+      <input
+        type="number"
+        [formControlName]="questions[currentStep].controlName"
+        (change)="handleNextStep()"
+      />
+    </ng-container>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <!-- <div class="navigation-buttons">
+    <button 
+      [disabled]="currentStep === 0" 
+      (click)="goToPreviousStep()"
+    >
+      Previous
+    </button>
+    <button 
+      *ngIf="currentStep < questions.length - 1" 
+      (click)="handleNextStep()"
+    >
+      Next
+    </button>
+    <button 
+      *ngIf="currentStep === questions.length - 1" 
+      (click)="submitForm()"
+    >
+      Submit
+    </button>
+  </div> -->
+</div>
