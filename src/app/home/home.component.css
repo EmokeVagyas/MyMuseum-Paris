@@ -1,0 +1,27 @@
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Full viewport height */
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #f81e75;
+    /* Green button */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    /* Space between text and button */
+}
+
+button:hover {
+    background-color: #f84a1e;
+    /* Slightly darker green */
+}
