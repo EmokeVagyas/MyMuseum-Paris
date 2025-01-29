@@ -1,0 +1,22 @@
+﻿[
+  {
+    "CityId": 1,
+    "CityName": "Paris",
+    "CountryId": 1
+  },
+  {
+    "CityId": 2,
+    "CityName": "London",
+    "CountryId": 2
+  },
+  {
+    "CityId": 3,
+    "CityName": "Berlin",
+    "CountryId": 3
+  },
+  {
+    "CityId": 4,
+    "CityName": "Marseille",
+    "CountryId": 1
+  }
+]
