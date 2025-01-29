@@ -1,0 +1,14 @@
+﻿[
+  {
+    "MuseumId": 1,
+    "OpeningHour": "09:00",
+    "ClosingHour": "18:00",
+    "DayOfWeek": "Monday"
+  },
+  {
+    "MuseumId": 1,
+    "OpeningHour": "09:00",
+    "ClosingHour": "18:00",
+    "DayOfWeek": "Tuesday"
+  }
+]
