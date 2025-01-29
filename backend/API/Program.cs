@@ -1,5 +1,7 @@
 using Backend.Infrastructure.Data;
+using Backend.Infrastructure.Data.Seeds;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//app.SeedData();
 
 app.UseHttpsRedirection();
 

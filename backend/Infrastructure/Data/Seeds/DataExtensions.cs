@@ -6,23 +6,24 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Linq;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Backend.Infrastructure.Data.Seeds
 {
-    public static class SeedData
+    public static class DataExtensions
     {
-        public static void Initialize(IServiceProvider serviceProvider, bool isDevelopment)
+        public static IApplicationBuilder SeedData(this IApplicationBuilder app)
         {
             using var context = new MuseumContext(
-                serviceProvider.GetRequiredService<DbContextOptions<MuseumContext>>());
+                app.ApplicationServices.GetRequiredService<DbContextOptions<MuseumContext>>());
 
             if (context.Museums.Any() && context.Cities.Any() && context.Countries.Any())
             {
-                return;
+                return app;
             }
 
-            var countries = LoadCountriesFromJson("countries.json");
-            var cities = LoadCitiesFromJson("cities.json");
+            var countries = LoadFromJson<List<Country>>("countries.json");
+            var cities = LoadFromJson<List<City>>("cities.json");
 
             context.Countries.AddRange(countries);
             context.SaveChanges();
@@ -38,28 +39,9 @@ namespace Backend.Infrastructure.Data.Seeds
             }
             context.SaveChanges();
 
-            var museumSchedules = LoadOpeningHoursFromJson("museumSchedule.json");
+            var museumSchedules = LoadFromJson<List<MuseumSchedule>>("museumSchedule.json");
 
-            var museums = new List<Museum>();
-            for (int i = 0; i < 150; i++)
-            {
-                var museum = new Museum
-                {
-                    Name = $"Museum {i + 1}",
-                    Location = $"Location {i + 1}",
-                    Description = $"Description for Museum {i + 1}",
-                    Palace = i % 2 == 0,
-                    IndoorOrOutdoor = i % 2 == 0 ? "Indoor" : "Outdoor",
-                    Accessibility = "Wheelchair accessible",
-                    GuidedTours = i % 2 == 0,
-                    Languages = new List<string> { "English, French, Spanish" },
-                    CityId = 1,
-                };
-                var openingHoursForMuseum = museumSchedules.FirstOrDefault(o => o.MuseumId == i + 1);
-                
-
-                museums.Add(museum);
-            }
+            var museums = LoadFromJson<List<Museum>>("museums.json");
 
             context.Museums.AddRange(museums);
             context.SaveChanges();
@@ -77,7 +59,9 @@ namespace Backend.Infrastructure.Data.Seeds
             context.MuseumFeatures.AddRange(features);
             context.SaveChanges();
 
-            AddMuseumFeatureOptions(contex);
+            AddMuseumFeatureOptions(context);
+
+            return app;
         }
 
         private static void AddMuseumFeatureOptions(MuseumContext context)
@@ -131,28 +115,10 @@ namespace Backend.Infrastructure.Data.Seeds
             context.SaveChanges();
         }
 
-        private static List<Country> LoadCountriesFromJson(string filePath)
+        private static T LoadFromJson<T>(string jsonPath) where T : class
         {
-            string jsonContent = File.ReadAllText(filePath);
-
-            List<Country> countries = JsonConvert.DeserializeObject<List<Country>>(jsonContent);
-
-            return countries;
-        }
-
-        private static List<City> LoadCitiesFromJson(string filePath)
-        {
-            string jsonContent = File.ReadAllText(filePath);
-
-            List<City> cities = JsonConvert.DeserializeObject<List<City>>(jsonContent);
-
-            return cities;
-        }
-
-        private static List<MuseumSchedule> LoadOpeningHoursFromJson(string filePath)
-        {
-            string jsonContent = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<List<MuseumSchedule>>(jsonContent);
+            string jsonContent = File.ReadAllText(jsonPath);
+            return JsonConvert.DeserializeObject<T>(jsonContent)!;
         }
     }
 }

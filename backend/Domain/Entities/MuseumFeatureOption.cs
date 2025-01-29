@@ -6,10 +6,10 @@ namespace Backend.Domain.Entities
     {
         public int  MuseumFeatureOptionID { get; set; }
         public int MuseumFeatureID { get; set; }
-        public string OptionName { get; set; }
+        public string? OptionName { get; set; }
 
 
         [ForeignKey("MuseumFeatureID")]
-        public MuseumFeature MuseumFeature { get; set; }
+        public MuseumFeature MuseumFeature { get; set; } = null!;
     }
 }

@@ -8,10 +8,10 @@ namespace Backend.Domain.Entities
     public class MuseumFeature
     {
         public int FeatureID { get; set; }
-        public string FeatureType { get; set; }
+        public required string FeatureType { get; set; }
 
 
         [InverseProperty("MuseumFeature")]
-        public List<MuseumFeatureOption> MuseumFeatureOptions { get; set; }
+        public List<MuseumFeatureOption> MuseumFeatureOptions { get; set; } = [];
     }
 }

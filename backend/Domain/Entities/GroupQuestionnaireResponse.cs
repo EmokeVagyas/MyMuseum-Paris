@@ -6,9 +6,8 @@
         public int UserID { get; set; }
         public int FeatureID { get; set; }
         public int OptionID { get; set; }
-
-        public User User { get; set; }
-        public MuseumFeature MuseumFeature { get; set; }
-        public MuseumFeatureOption MuseumFeatureOption { get; set; }
+        public required User User { get; set; }
+        public required MuseumFeature MuseumFeature { get; set; }
+        public required MuseumFeatureOption MuseumFeatureOption { get; set; }
     }
 }
