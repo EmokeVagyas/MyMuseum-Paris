@@ -119,13 +119,15 @@ namespace Backend.Infrastructure.Data
 
             modelBuilder.Entity<MuseumFeatureAssociation>()
                 .HasOne(mfa => mfa.Museum)
-                .WithMany()
-                .HasForeignKey(mfa => mfa.MuseumId);
+                .WithMany(m => m.MuseumFeatureAssociations)
+                .HasForeignKey(mfa => mfa.MuseumId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<MuseumFeatureAssociation>()
                 .HasOne(mfa => mfa.MuseumFeatureOption)
                 .WithMany()
-                .HasForeignKey(mfa => mfa.MuseumFeatureOptionId);
+                .HasForeignKey(mfa => mfa.MuseumFeatureOptionId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // GROUP QUESTIONNAIRE RESPONSE RELATIONS
             //modelBuilder.Entity<GroupQuestionnaireResponse>()

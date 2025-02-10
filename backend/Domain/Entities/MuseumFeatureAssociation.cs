@@ -1,4 +1,6 @@
-﻿namespace Backend.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Backend.Domain.Entities
 {
     /// <summary>
     /// Join Table
@@ -6,8 +8,11 @@
     public class MuseumFeatureAssociation
     {
         public int MuseumId { get; set; }
-        public int MuseumFeatureOptionId { get; set; }
+        [ForeignKey("MuseumId")]
         public required Museum Museum { get; set; }
+
+        public int MuseumFeatureOptionId { get; set; }
+        [ForeignKey("MuseumFeatureOptionId")]
         public required MuseumFeatureOption MuseumFeatureOption { get; set; }
     }
 }
