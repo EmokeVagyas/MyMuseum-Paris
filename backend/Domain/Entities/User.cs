@@ -5,8 +5,10 @@
         public required int UserID { get; set; }
         public required string Email { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public required List<UserQuestionnaireResponse> UserQuestionnaireResponses { get; set; }
-        public required List<UserTravelDay> UserTravelDays { get; set; }
-        public required List<GroupQuestionnaireResponse> GroupQuestionnaireResponses { get; set; }
+        
+        // @TOOD: Re-think this
+        // public required List<UserTravelDay> UserTravelDays { get; set; }
+        // public required List<UserQuestionnaireResponse> UserQuestionnaireResponses { get; set; }
+        // public required List<GroupQuestionnaireResponse> GroupQuestionnaireResponses { get; set; }
     }
 }

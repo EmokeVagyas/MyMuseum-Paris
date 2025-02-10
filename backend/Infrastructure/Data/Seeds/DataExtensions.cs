@@ -14,8 +14,8 @@ namespace Backend.Infrastructure.Data.Seeds
     {
         public static IApplicationBuilder SeedData(this IApplicationBuilder app)
         {
-            using var context = new MuseumContext(
-                app.ApplicationServices.GetRequiredService<DbContextOptions<MuseumContext>>());
+            using var scope = app.ApplicationServices.CreateScope();
+            var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
             if (context.Museums.Any() && context.Cities.Any() && context.Countries.Any())
             {
@@ -61,57 +61,69 @@ namespace Backend.Infrastructure.Data.Seeds
 
             AddMuseumFeatureOptions(context);
 
+            AddMuseumFeatureAssociations(context);
+
             return app;
         }
 
-        private static void AddMuseumFeatureOptions(MuseumContext context)
+        private static void AddMuseumFeatureOptions(AppDbContext context)
         {
 
             var artOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureID = 1, OptionName= "Classical ( Renessaince, Baroque, Neoclassical, Romanticism )" },
-                new MuseumFeatureOption { MuseumFeatureID = 1, OptionName = "Impressionism ( Monet, Renoir, Degas )" },
-                new MuseumFeatureOption { MuseumFeatureID = 1, OptionName = "Modern ( Post-Impressionism, Surrealism, Cubism )" },
-                new MuseumFeatureOption { MuseumFeatureID = 1, OptionName = "Contemporary ( Minimalism, Abstract Expressionism )" },
-                new MuseumFeatureOption { MuseumFeatureID = 1, OptionName = "Photography" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 1, MuseumFeatureId = 1, OptionName = "Classical ( Renessaince, Baroque, Neoclassical, Romanticism )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 2, MuseumFeatureId = 1, OptionName = "Impressionism ( Monet, Renoir, Degas )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 3, MuseumFeatureId = 1, OptionName = "Modern ( Post-Impressionism, Surrealism, Cubism )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 4, MuseumFeatureId = 1, OptionName = "Contemporary ( Minimalism, Abstract Expressionism )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 5, MuseumFeatureId = 1, OptionName = "Photography" },
             };
 
             var historyOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureID = 2, OptionName = "Ancient ( Egypt, Greece, Rome, Asia )" },
-                new MuseumFeatureOption { MuseumFeatureID = 2, OptionName = "Medieval" },
-                new MuseumFeatureOption { MuseumFeatureID = 2, OptionName = "Modern ( World Wars, 20th Century )" },
-                new MuseumFeatureOption { MuseumFeatureID = 2, OptionName = "French ( Royal France, Revolution, Napoleonic )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 6, MuseumFeatureId = 2, OptionName = "Ancient ( Egypt, Greece, Rome, Asia )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 7, MuseumFeatureId = 2, OptionName = "Medieval" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 8, MuseumFeatureId = 2, OptionName = "Modern ( World Wars, 20th Century )" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 9, MuseumFeatureId = 2, OptionName = "French ( Royal France, Revolution, Napoleonic )" },
             };
 
             var scienceOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureID = 3, OptionName = "Space & Astronomy" },
-                new MuseumFeatureOption { MuseumFeatureID = 3, OptionName = "Physics & Engineering" },
-                new MuseumFeatureOption { MuseumFeatureID = 3, OptionName = "Biology & Medicine" },
-                new MuseumFeatureOption { MuseumFeatureID = 3, OptionName = "Chemistry" },
-                new MuseumFeatureOption { MuseumFeatureID = 3, OptionName = "Geology" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 10, MuseumFeatureId = 3, OptionName = "Space & Astronomy" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 11, MuseumFeatureId = 3, OptionName = "Physics & Engineering" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 12, MuseumFeatureId = 3, OptionName = "Biology & Medicine" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 13, MuseumFeatureId = 3, OptionName = "Chemistry" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 14, MuseumFeatureId = 3, OptionName = "Geology" },
             };
 
             var naturalHistoryOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Dinosaurs & Prehistoric Life" },
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Human Evolution" },
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Marine Life & Oceanography" },
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Botany & Plant Life" },
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Geology & Mineralogy" },
-                new MuseumFeatureOption { MuseumFeatureID = 4, OptionName = "Wildlife & Zoology" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 15, MuseumFeatureId = 4, OptionName = "Dinosaurs & Prehistoric Life" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 16, MuseumFeatureId = 4, OptionName = "Human Evolution" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 17, MuseumFeatureId = 4, OptionName = "Marine Life & Oceanography" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 18, MuseumFeatureId = 4, OptionName = "Botany & Plant Life" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 19, MuseumFeatureId = 4, OptionName = "Geology & Mineralogy" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 20, MuseumFeatureId = 4, OptionName = "Wildlife & Zoology" },
             };
 
             var cultureOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption {MuseumFeatureID = 5, OptionName = "Ancient Civilizations" },
-                new MuseumFeatureOption {MuseumFeatureID = 5, OptionName = "World Religions & Beliefs" },
-                new MuseumFeatureOption {MuseumFeatureID = 5, OptionName = "Indigineous Cultures" },
-                new MuseumFeatureOption {MuseumFeatureID = 5, OptionName = "Cultural Arfifacts & Traditions" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 21, MuseumFeatureId = 5, OptionName = "Ancient Civilizations" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 22, MuseumFeatureId = 5, OptionName = "World Religions & Beliefs" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 23, MuseumFeatureId = 5, OptionName = "Indigineous Cultures" },
+                new MuseumFeatureOption { MuseumFeatureOptionId = 24, MuseumFeatureId = 5, OptionName = "Cultural Arfifacts & Traditions" },
             };
 
             context.MuseumFeatureOptions.AddRange(artOptions.Concat(historyOptions).Concat(scienceOptions).Concat(naturalHistoryOptions).Concat(cultureOptions));
+            context.SaveChanges();
+        }
+
+        private static void AddMuseumFeatureAssociations(AppDbContext context)
+        {
+            if (context.MuseumFeatureAssociations.Any()) return;
+
+            var museumFeatureAssociations = LoadFromJson<List<MuseumFeatureAssociation>>("museum_feature_associations.json");
+
+            context.MuseumFeatureAssociations.AddRange(museumFeatureAssociations);
             context.SaveChanges();
         }
 

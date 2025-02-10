@@ -5,9 +5,8 @@
     /// </summary>
     public class MuseumFeatureAssociation
     {
-        public int MuseumID { get; set; }
-        public int MuseumFeatureOptionID { get; set; }
-
+        public int MuseumId { get; set; }
+        public int MuseumFeatureOptionId { get; set; }
         public required Museum Museum { get; set; }
         public required MuseumFeatureOption MuseumFeatureOption { get; set; }
     }

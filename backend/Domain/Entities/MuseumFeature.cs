@@ -7,7 +7,7 @@ namespace Backend.Domain.Entities
     /// </summary>
     public class MuseumFeature
     {
-        public int FeatureID { get; set; }
+        public int Id { get; set; }
         public required string FeatureType { get; set; }
 
 

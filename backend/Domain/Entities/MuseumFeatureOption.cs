@@ -4,12 +4,12 @@ namespace Backend.Domain.Entities
 {
     public class MuseumFeatureOption
     {
-        public int  MuseumFeatureOptionID { get; set; }
-        public int MuseumFeatureID { get; set; }
+        public int  MuseumFeatureOptionId { get; set; }
+        public int MuseumFeatureId { get; set; }
         public string? OptionName { get; set; }
 
 
-        [ForeignKey("MuseumFeatureID")]
+        [ForeignKey("MuseumFeatureId")]
         public MuseumFeature MuseumFeature { get; set; } = null!;
     }
 }
