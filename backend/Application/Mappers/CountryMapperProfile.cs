@@ -8,9 +8,14 @@ namespace Backend.Application.Mappers
     {
         public CountryMapperProfile()
         {
-            CreateMap<Country, CountryDTO>()
-                .ForMember(dest => dest.Cities, opt => opt.MapFrom(src => src.Cities!.Select(c => c.Name)));
-            CreateMap<CountryDTO, Country>();
+            CreateMap<CountryDto, Country>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.CountryName))
+                .ForMember(dest => dest.Cities, opt => opt.MapFrom(src => src.Cities.Select(c => new City
+                {
+                    CityId = c.CityId,
+                    Name = c.CityName,
+                    CountryId = src.CountryId
+                })));
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -15,9 +17,9 @@ namespace Backend.Migrations
                 name: "Countries",
                 columns: table => new
                 {
-                    CountryId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CountryId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,9 +30,9 @@ namespace Backend.Migrations
                 name: "MuseumFeatures",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FeatureType = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    FeatureType = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,9 +43,9 @@ namespace Backend.Migrations
                 name: "Schedules",
                 columns: table => new
                 {
-                    ScheduleId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Year = table.Column<int>(type: "int", nullable: false)
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Year = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,10 +56,10 @@ namespace Backend.Migrations
                 name: "SpecialRule",
                 columns: table => new
                 {
-                    SpecialRuleId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RuleType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SpecialRuleId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RuleType = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,10 +70,10 @@ namespace Backend.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UserID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -82,10 +84,10 @@ namespace Backend.Migrations
                 name: "Cities",
                 columns: table => new
                 {
-                    CityId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CountryId = table.Column<int>(type: "int", nullable: false)
+                    CityId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    CountryId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,10 +104,10 @@ namespace Backend.Migrations
                 name: "MuseumFeatureOptions",
                 columns: table => new
                 {
-                    MuseumFeatureOptionId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OptionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MuseumFeatureId = table.Column<int>(type: "int", nullable: false)
+                    MuseumFeatureOptionId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    OptionName = table.Column<string>(type: "text", nullable: true),
+                    MuseumFeatureId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -122,13 +124,13 @@ namespace Backend.Migrations
                 name: "ExceptionalDays",
                 columns: table => new
                 {
-                    ExceptionalDayId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ExceptionalDayId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Date = table.Column<DateOnly>(type: "date", nullable: false),
-                    IsClosed = table.Column<bool>(type: "bit", nullable: true),
-                    IsFree = table.Column<bool>(type: "bit", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ScheduleId = table.Column<int>(type: "int", nullable: false)
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: true),
+                    IsFree = table.Column<bool>(type: "boolean", nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,14 +147,14 @@ namespace Backend.Migrations
                 name: "OpeningPeriods",
                 columns: table => new
                 {
-                    OpeningPeriodId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OpeningPeriodId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastEntryOffset = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RoomClearingOffset = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ScheduleId = table.Column<int>(type: "int", nullable: false)
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    LastEntryOffset = table.Column<string>(type: "text", nullable: false),
+                    RoomClearingOffset = table.Column<string>(type: "text", nullable: false),
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -169,13 +171,13 @@ namespace Backend.Migrations
                 name: "Condition",
                 columns: table => new
                 {
-                    ConditionId = table.Column<int>(type: "int", nullable: false),
-                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
-                    WeekOfMonth = table.Column<int>(type: "int", nullable: false),
-                    StartTime = table.Column<TimeOnly>(type: "time", nullable: false),
-                    EndTime = table.Column<TimeOnly>(type: "time", nullable: false),
-                    ExcludedMonths = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsFree = table.Column<bool>(type: "bit", nullable: false)
+                    ConditionId = table.Column<int>(type: "integer", nullable: false),
+                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
+                    WeekOfMonth = table.Column<int>(type: "integer", nullable: false),
+                    StartTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
+                    EndTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
+                    ExcludedMonths = table.Column<List<int>>(type: "integer[]", nullable: false),
+                    IsFree = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -192,18 +194,18 @@ namespace Backend.Migrations
                 name: "Museums",
                 columns: table => new
                 {
-                    MuseumId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Environment = table.Column<int>(type: "int", nullable: false),
-                    Accessibility = table.Column<int>(type: "int", nullable: false),
-                    Languages = table.Column<int>(type: "int", nullable: false),
-                    GuidedTours = table.Column<bool>(type: "bit", nullable: false),
-                    AudioGuide = table.Column<bool>(type: "bit", nullable: false),
-                    ShopId = table.Column<int>(type: "int", nullable: false),
-                    CityId = table.Column<int>(type: "int", nullable: true)
+                    MuseumId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Location = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    Environment = table.Column<int>(type: "integer", nullable: false),
+                    Accessibility = table.Column<int>(type: "integer", nullable: false),
+                    Languages = table.Column<int>(type: "integer", nullable: false),
+                    GuidedTours = table.Column<bool>(type: "boolean", nullable: false),
+                    AudioGuide = table.Column<bool>(type: "boolean", nullable: false),
+                    ShopId = table.Column<int>(type: "integer", nullable: false),
+                    CityId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -219,16 +221,16 @@ namespace Backend.Migrations
                 name: "OpeningHours",
                 columns: table => new
                 {
-                    OpeningHourId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
-                    OpeningTime = table.Column<TimeOnly>(type: "time", nullable: true),
-                    ClosingTime = table.Column<TimeOnly>(type: "time", nullable: true),
-                    IsFree = table.Column<bool>(type: "bit", nullable: false),
-                    IsClosed = table.Column<bool>(type: "bit", nullable: false),
-                    ShopId = table.Column<int>(type: "int", nullable: true),
-                    ExceptionalDayId = table.Column<int>(type: "int", nullable: true),
-                    OpeningPeriodId = table.Column<int>(type: "int", nullable: true)
+                    OpeningHourId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
+                    OpeningTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
+                    ClosingTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
+                    IsFree = table.Column<bool>(type: "boolean", nullable: false),
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: false),
+                    ShopId = table.Column<int>(type: "integer", nullable: true),
+                    ExceptionalDayId = table.Column<int>(type: "integer", nullable: true),
+                    OpeningPeriodId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -247,17 +249,17 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MuseumFeatureAssociations",
+                name: "FeatureAssociations",
                 columns: table => new
                 {
-                    MuseumId = table.Column<int>(type: "int", nullable: false),
-                    MuseumFeatureOptionId = table.Column<int>(type: "int", nullable: false)
+                    MuseumId = table.Column<int>(type: "integer", nullable: false),
+                    MuseumFeatureOptionId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MuseumFeatureAssociations", x => new { x.MuseumId, x.MuseumFeatureOptionId });
                     table.ForeignKey(
-                        name: "FK_MuseumFeatureAssociations_MuseumFeatureOptions_MuseumFeatureOptionId",
+                        name: "FK_MuseumFeatureAssociations_MuseumFeatureOptions_MuseumFeatur~",
                         column: x => x.MuseumFeatureOptionId,
                         principalTable: "MuseumFeatureOptions",
                         principalColumn: "MuseumFeatureOptionId",
@@ -271,11 +273,11 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MuseumSchedules",
+                name: "Schedules",
                 columns: table => new
                 {
-                    MuseumId = table.Column<int>(type: "int", nullable: false),
-                    ScheduleId = table.Column<int>(type: "int", nullable: false)
+                    MuseumId = table.Column<int>(type: "integer", nullable: false),
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -298,8 +300,8 @@ namespace Backend.Migrations
                 name: "Shops",
                 columns: table => new
                 {
-                    ShopId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ShopId = table.Column<int>(type: "integer", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -316,8 +318,8 @@ namespace Backend.Migrations
                 name: "ShopSchedules",
                 columns: table => new
                 {
-                    ShopId = table.Column<int>(type: "int", nullable: false),
-                    ScheduleId = table.Column<int>(type: "int", nullable: false)
+                    ShopId = table.Column<int>(type: "integer", nullable: false),
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -348,7 +350,7 @@ namespace Backend.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_MuseumFeatureAssociations_MuseumFeatureOptionId",
-                table: "MuseumFeatureAssociations",
+                table: "FeatureAssociations",
                 column: "MuseumFeatureOptionId");
 
             migrationBuilder.CreateIndex(
@@ -363,7 +365,7 @@ namespace Backend.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_MuseumSchedules_ScheduleId",
-                table: "MuseumSchedules",
+                table: "Schedules",
                 column: "ScheduleId");
 
             migrationBuilder.CreateIndex(
@@ -394,10 +396,10 @@ namespace Backend.Migrations
                 name: "Condition");
 
             migrationBuilder.DropTable(
-                name: "MuseumFeatureAssociations");
+                name: "FeatureAssociations");
 
             migrationBuilder.DropTable(
-                name: "MuseumSchedules");
+                name: "Schedules");
 
             migrationBuilder.DropTable(
                 name: "OpeningHours");

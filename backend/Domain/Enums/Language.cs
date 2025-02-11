@@ -1,6 +1,6 @@
-﻿namespace Backend.Domain.Entities
+﻿namespace Backend.Domain.Enums
 {
-    public enum Languages
+    public enum Language
     {
         English = 0,
         French = 1,

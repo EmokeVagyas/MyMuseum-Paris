@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Backend.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250210214443_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +45,7 @@ namespace Backend.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("Cities", (string)null);
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Condition", b =>
@@ -71,7 +74,7 @@ namespace Backend.Migrations
 
                     b.HasKey("ConditionId");
 
-                    b.ToTable("Condition", (string)null);
+                    b.ToTable("Condition");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Country", b =>
@@ -88,7 +91,7 @@ namespace Backend.Migrations
 
                     b.HasKey("CountryId");
 
-                    b.ToTable("Countries", (string)null);
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ExceptionalDay", b =>
@@ -115,16 +118,11 @@ namespace Backend.Migrations
                     b.Property<int>("ScheduleId")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("TimeTableId")
-                        .HasColumnType("integer");
-
                     b.HasKey("ExceptionalDayId");
 
                     b.HasIndex("ScheduleId");
 
-                    b.HasIndex("TimeTableId");
-
-                    b.ToTable("ExceptionalDays", (string)null);
+                    b.ToTable("ExceptionalDays");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Museum", b =>
@@ -134,6 +132,9 @@ namespace Backend.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MuseumId"));
+
+                    b.Property<int>("Accessibility")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("AudioGuide")
                         .HasColumnType("boolean");
@@ -151,6 +152,9 @@ namespace Backend.Migrations
                     b.Property<bool>("GuidedTours")
                         .HasColumnType("boolean");
 
+                    b.Property<int>("Languages")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("text");
@@ -159,24 +163,14 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("ShopId")
+                        .HasColumnType("integer");
+
                     b.HasKey("MuseumId");
 
                     b.HasIndex("CityId");
 
-                    b.ToTable("Museums", (string)null);
-                });
-
-            modelBuilder.Entity("Backend.Domain.Entities.MuseumAccessibility", b =>
-                {
-                    b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Accessibility")
-                        .HasColumnType("integer");
-
-                    b.HasKey("MuseumId", "Accessibility");
-
-                    b.ToTable("MuseumAccessibility", (string)null);
+                    b.ToTable("Museums");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeature", b =>
@@ -193,7 +187,7 @@ namespace Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MuseumFeatures", (string)null);
+                    b.ToTable("MuseumFeatures");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeatureAssociation", b =>
@@ -208,7 +202,7 @@ namespace Backend.Migrations
 
                     b.HasIndex("MuseumFeatureOptionId");
 
-                    b.ToTable("FeatureAssociations", (string)null);
+                    b.ToTable("FeatureAssociations");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeatureOption", b =>
@@ -229,20 +223,7 @@ namespace Backend.Migrations
 
                     b.HasIndex("MuseumFeatureId");
 
-                    b.ToTable("MuseumFeatureOptions", (string)null);
-                });
-
-            modelBuilder.Entity("Backend.Domain.Entities.MuseumLanguage", b =>
-                {
-                    b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Language")
-                        .HasColumnType("integer");
-
-                    b.HasKey("MuseumId", "Language");
-
-                    b.ToTable("MuseumLanguage", (string)null);
+                    b.ToTable("MuseumFeatureOptions");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumSchedule", b =>
@@ -253,16 +234,11 @@ namespace Backend.Migrations
                     b.Property<int>("ScheduleId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TimeTableId")
-                        .HasColumnType("integer");
-
                     b.HasKey("MuseumId", "ScheduleId");
 
                     b.HasIndex("ScheduleId");
 
-                    b.HasIndex("TimeTableId");
-
-                    b.ToTable("Schedules", (string)null);
+                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.OpeningHour", b =>
@@ -303,7 +279,7 @@ namespace Backend.Migrations
 
                     b.HasIndex("OpeningPeriodId");
 
-                    b.ToTable("OpeningHours", (string)null);
+                    b.ToTable("OpeningHours");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.OpeningPeriod", b =>
@@ -335,16 +311,11 @@ namespace Backend.Migrations
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("date");
 
-                    b.Property<int?>("TimeTableId")
-                        .HasColumnType("integer");
-
                     b.HasKey("OpeningPeriodId");
 
                     b.HasIndex("ScheduleId");
 
-                    b.HasIndex("TimeTableId");
-
-                    b.ToTable("OpeningPeriods", (string)null);
+                    b.ToTable("OpeningPeriods");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Schedule", b =>
@@ -360,15 +331,12 @@ namespace Backend.Migrations
 
                     b.HasKey("ScheduleId");
 
-                    b.ToTable("Schedules", (string)null);
+                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Shop", b =>
                 {
                     b.Property<int>("ShopId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("MuseumId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
@@ -377,7 +345,7 @@ namespace Backend.Migrations
 
                     b.HasKey("ShopId");
 
-                    b.ToTable("Shops", (string)null);
+                    b.ToTable("Shops");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ShopSchedule", b =>
@@ -388,32 +356,11 @@ namespace Backend.Migrations
                     b.Property<int>("ScheduleId")
                         .HasColumnType("integer");
 
-                    b.Property<TimeOnly?>("ClosingTime")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<DateOnly?>("Date")
-                        .HasColumnType("date");
-
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsClosed")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("IsFree")
-                        .HasColumnType("boolean");
-
-                    b.Property<TimeOnly?>("OpeningTime")
-                        .HasColumnType("time without time zone");
-
                     b.HasKey("ShopId", "ScheduleId");
 
                     b.HasIndex("ScheduleId");
 
-                    b.ToTable("ShopSchedules", (string)null);
+                    b.ToTable("ShopSchedules");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.SpecialRule", b =>
@@ -432,30 +379,9 @@ namespace Backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("TimeTableId")
-                        .HasColumnType("integer");
-
                     b.HasKey("SpecialRuleId");
 
-                    b.HasIndex("TimeTableId");
-
-                    b.ToTable("SpecialRule", (string)null);
-                });
-
-            modelBuilder.Entity("Backend.Domain.Entities.TimeTable", b =>
-                {
-                    b.Property<int>("TimeTableId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TimeTableId"));
-
-                    b.Property<int>("Year")
-                        .HasColumnType("integer");
-
-                    b.HasKey("TimeTableId");
-
-                    b.ToTable("TimeTable", (string)null);
+                    b.ToTable("SpecialRule");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.User", b =>
@@ -475,7 +401,7 @@ namespace Backend.Migrations
 
                     b.HasKey("UserID");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.City", b =>
@@ -506,10 +432,6 @@ namespace Backend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Domain.Entities.TimeTable", null)
-                        .WithMany("ExceptionalDays")
-                        .HasForeignKey("TimeTableId");
-
                     b.Navigation("Schedule");
                 });
 
@@ -520,17 +442,6 @@ namespace Backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
-                });
-
-            modelBuilder.Entity("Backend.Domain.Entities.MuseumAccessibility", b =>
-                {
-                    b.HasOne("Backend.Domain.Entities.Museum", "Museum")
-                        .WithMany("Accessibilities")
-                        .HasForeignKey("MuseumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Museum");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeatureAssociation", b =>
@@ -563,17 +474,6 @@ namespace Backend.Migrations
                     b.Navigation("MuseumFeature");
                 });
 
-            modelBuilder.Entity("Backend.Domain.Entities.MuseumLanguage", b =>
-                {
-                    b.HasOne("Backend.Domain.Entities.Museum", "Museum")
-                        .WithMany("Languages")
-                        .HasForeignKey("MuseumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Museum");
-                });
-
             modelBuilder.Entity("Backend.Domain.Entities.MuseumSchedule", b =>
                 {
                     b.HasOne("Backend.Domain.Entities.Museum", "Museum")
@@ -588,17 +488,9 @@ namespace Backend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Domain.Entities.TimeTable", "TimeTable")
-                        .WithMany()
-                        .HasForeignKey("TimeTableId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Museum");
 
                     b.Navigation("Schedule");
-
-                    b.Navigation("TimeTable");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.OpeningHour", b =>
@@ -623,22 +515,16 @@ namespace Backend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Backend.Domain.Entities.TimeTable", null)
-                        .WithMany("OpeningPeriods")
-                        .HasForeignKey("TimeTableId");
-
                     b.Navigation("Schedule");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Shop", b =>
                 {
-                    b.HasOne("Backend.Domain.Entities.Museum", "Museum")
-                        .WithMany("Shops")
-                        .HasForeignKey("ShopId")
+                    b.HasOne("Backend.Domain.Entities.Museum", null)
+                        .WithOne("Shop")
+                        .HasForeignKey("Backend.Domain.Entities.Shop", "ShopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Museum");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ShopSchedule", b =>
@@ -660,13 +546,6 @@ namespace Backend.Migrations
                     b.Navigation("Shop");
                 });
 
-            modelBuilder.Entity("Backend.Domain.Entities.SpecialRule", b =>
-                {
-                    b.HasOne("Backend.Domain.Entities.TimeTable", null)
-                        .WithMany("SpecialRules")
-                        .HasForeignKey("TimeTableId");
-                });
-
             modelBuilder.Entity("Backend.Domain.Entities.Country", b =>
                 {
                     b.Navigation("Cities");
@@ -679,15 +558,12 @@ namespace Backend.Migrations
 
             modelBuilder.Entity("Backend.Domain.Entities.Museum", b =>
                 {
-                    b.Navigation("Accessibilities");
-
                     b.Navigation("FeatureAssociations");
-
-                    b.Navigation("Languages");
 
                     b.Navigation("Schedules");
 
-                    b.Navigation("Shops");
+                    b.Navigation("Shop")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeature", b =>
@@ -716,15 +592,6 @@ namespace Backend.Migrations
                 {
                     b.Navigation("Condition")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Backend.Domain.Entities.TimeTable", b =>
-                {
-                    b.Navigation("ExceptionalDays");
-
-                    b.Navigation("OpeningPeriods");
-
-                    b.Navigation("SpecialRules");
                 });
 #pragma warning restore 612, 618
         }

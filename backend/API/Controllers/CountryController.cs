@@ -31,14 +31,14 @@ namespace Backend.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCountry([FromBody] CountryDTO countryDto)
+        public async Task<IActionResult> AddCountry([FromBody] CountryDto countryDto)
         {
             var newCountry = await _countryService.AddCountryAsync(countryDto);
             return CreatedAtAction(nameof(GetCountryById), new { id = newCountry.CountryId }, newCountry);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCountry(int id, [FromBody] CountryDTO countryDto)
+        public async Task<IActionResult> UpdateCountry(int id, [FromBody] CountryDto countryDto)
         {
             var updated = await _countryService.UpdateCountryAsync(id, countryDto);
             if (!updated) return NotFound();

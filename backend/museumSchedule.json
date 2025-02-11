@@ -30,28 +30,79 @@
       "SpecialRules": [
         {
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 5, "WeekOfMonth": 1, "StartTime": "18:00", "EndTime": "21:00", "ExcludedMonths": [ 7, 8 ], "IsFree": true },
+          "Condition": {
+            "ConditionId": 1,
+            "DayOfWeek": 5,
+            "WeekOfMonth": 1,
+            "StartTime": "18:00",
+            "EndTime": "21:00",
+            "ExcludedMonths": [ 7, 8 ],
+            "IsFree": true
+          },
           "Description": "Free entry on the first Friday of the month after 6 p.m., except in July and August."
         }
       ]
     },
-    "Shop": {
-      "Name": "Louvre Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:30" },
-        { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "21:00" },
-        { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:30" },
-        { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "21:00" },
-        { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:30" },
-        { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:30" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Louvre Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "10:00",
+            "ClosingTime": "21:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "10:00",
+            "ClosingTime": "21:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:30"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 2,
@@ -83,27 +134,73 @@
       "SpecialRules": [
         {
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "StartTime": "09:30", "EndTime": "18:00", "IsFree": true },
+          "Condition": {
+            "ConditionId": 2,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "StartTime": "09:30",
+            "EndTime": "18:00",
+            "IsFree": true
+          },
           "Description": "Free entry on the first Sunday of each month. Online booking required."
         }
       ]
     },
-    "Shop": {
-      "Name": "D'Orsay Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:30" },
-        { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:30" },
-        { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "21:10" },
-        { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:30" },
-        { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:30" },
-        { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:30" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "D'Orsay Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "09:30",
+            "ClosingTime": "21:10"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:30"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:30"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 3,
@@ -141,33 +238,88 @@
       "SpecialRules": [
         {
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "StartTime": "09:00", "EndTime": "18:00", "IsFree": true },
+          "Condition": {
+            "ConditionId": 3,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "StartTime": "09:00",
+            "EndTime": "18:00",
+            "IsFree": true
+          },
           "Description": "Free entry on the first Sunday of each month."
         }
       ]
     },
-    "Shop": {
-      "Name": "L'Orangerie Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-        { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-        { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-        { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-        { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-        { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "17:45" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "07-14", "Description": "Bastille Day (morning closure)",
-          "OpeningHours": [
-            { "OpeningTime": "09:00", "ClosingTime": "12:00", "IsClosed": true},
-            { "OpeningTime": "12:00", "ClosingTime": "18:00" }
-          ]
-        },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "L'Orangerie Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "09:00",
+            "ClosingTime": "17:45"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "07-14",
+            "Description": "Bastille Day (morning closure)",
+            "OpeningHours": [
+              {
+                "OpeningTime": "09:00",
+                "ClosingTime": "12:00",
+                "IsClosed": true
+              },
+              {
+                "OpeningTime": "12:00",
+                "ClosingTime": "18:00"
+              }
+            ]
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 4,
@@ -200,7 +352,13 @@
       "SpecialRules": [
         {
           "RuleType": "LateOpening",
-          "Condition": { "DayOfWeek": 5, "WeekOfMonth": 1, "StartTime": "18:00", "EndTime": "22:00" },
+          "Condition": {
+            "ConditionId": 4,
+            "DayOfWeek": 5,
+            "WeekOfMonth": 1,
+            "StartTime": "18:00",
+            "EndTime": "22:00"
+          },
           "Description": "Late opening on the first Friday of each month from 6 PM to 10 PM (ticket office closes at 9 PM)",
           "LastEntryOffset": "-01:00"
         }
@@ -238,41 +396,102 @@
       "SpecialRules": [
         {
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "StartTime": "09:30", "EndTime": "18:00", "IsFree": true },
+          "Condition": {
+            "ConditionId": 5,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "StartTime": "09:30",
+            "EndTime": "18:00",
+            "IsFree": true
+          },
           "Description": "Free entry on the first Sunday of each month"
         },
         {
           "RuleType": "LateOpening",
-          "Condition": { "DayOfWeek": 3, "WeekOfMonth": 1, "StartTime": "18:00", "EndTime": "22:00" },
+          "Condition": {
+            "ConditionId": 6,
+            "DayOfWeek": 3,
+            "WeekOfMonth": 1,
+            "StartTime": "18:00",
+            "EndTime": "22:00"
+          },
           "Description": "Late opening on the first Wednesday of each month from 6 PM to 10 PM.",
           "LastEntryOffset": "-01:00"
         }
       ]
     },
-    "Shop": {
-      "Name": "Picasso Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00" },
-        { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00" },
-        { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00" },
-        { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00" },
-        { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00" },
-        { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labour Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ],
-      "SpecialRules": [
-        {
-          "RuleType": "LateOpening",
-          "Condition": { "DayOfWeek": 3, "WeekOfMonth": 1, "StartTime": "18:00", "EndTime": "22:00" },
-          "Description": "Late opening on the first Wednesday of each month from 6 PM to 10 PM."
-        }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Picasso Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "09:30",
+            "ClosingTime": "18:00"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labour Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ],
+        "SpecialRules": [
+          {
+            "RuleType": "LateOpening",
+            "Condition": {
+              "DayOfWeek": 3,
+              "WeekOfMonth": 1,
+              "StartTime": "18:00",
+              "EndTime": "22:00"
+            },
+            "Description": "Late opening on the first Wednesday of each month from 6 PM to 10 PM."
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 6,
@@ -317,50 +536,109 @@
       "SpecialRules": [
         { 
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "MonthRange": "10-03", "StartTime": "10:00", "EndTime": "18:30", "IsFree": true },
-          "Description": "Free entry on the first Sunday of each month from October to March."
-        },
-        {
-          "RuleType": "SculptureGardenClosing",
           "Condition": {
-            "DayOfWeek": [ 2, 3, 4, 5, 6, 7 ],
+            "ConditionId": 7,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "MonthRange": "10-03",
             "StartTime": "10:00",
-            "EndTime": "17:30"
+            "EndTime": "18:30",
+            "IsFree": true
           },
-          "Description": "Sculpture garden closes at 5:30 p.m.",
-          "RoomClearingOffset": "-00:15"
+          "Description": "Free entry on the first Sunday of each month from October to March."
         }
       ]
     },
-    "Shop": {
-      "Name": "Rodin Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labour Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" },
-        { "Date": "12-24", "Description": "Early closing on Christmas Eve",
-          "OpeningHours": [
-            { "OpeningTime": "10:00","ClosingTime": "17:30" },
-            { "OpeningTime": "17:30", "ClosingTime": "18:30", "IsClosed": true }
-          ]
-        },
-        { "Date": "12-31", "Description": "Early closing on New Year's Eve",
-          "OpeningHours": [
-            { "OpeningTime": "10:00", "ClosingTime": "17:30" },
-            { "OpeningTime": "17:30", "ClosingTime": "18:30", "IsClosed": true }
-          ]
-        }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Rodin Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labour Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          },
+          {
+            "Date": "12-24",
+            "Description": "Early closing on Christmas Eve",
+            "OpeningHours": [
+              {
+                "OpeningTime": "10:00",
+                "ClosingTime": "17:30"
+              },
+              {
+                "OpeningTime": "17:30",
+                "ClosingTime": "18:30",
+                "IsClosed": true
+              }
+            ]
+          },
+          {
+            "Date": "12-31",
+            "Description": "Early closing on New Year's Eve",
+            "OpeningHours": [
+              {
+                "OpeningTime": "10:00",
+                "ClosingTime": "17:30"
+              },
+              {
+                "OpeningTime": "17:30",
+                "ClosingTime": "18:30",
+                "IsClosed": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 7,
@@ -392,25 +670,76 @@
         { "Date": "12-25", "IsClosed": true, "IsFree": true, "Description": "Christmas Day" }
       ]
     },
-    "Shop": {
-      "Name": "Petit Palais Museum Shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-        { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "20:00" },
-        { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "20:00" },
-        { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "07-14", "IsClosed": true, "Description": "Bastille Day" },
-        { "Date": "11-11", "IsClosed": true, "Description": "Armistice Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Petit Palais Museum Shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "10:00",
+            "ClosingTime": "20:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "10:00",
+            "ClosingTime": "20:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "07-14",
+            "IsClosed": true,
+            "Description": "Bastille Day"
+          },
+          {
+            "Date": "11-11",
+            "IsClosed": true,
+            "Description": "Armistice Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 8,
@@ -441,23 +770,66 @@
         { "Date": "12-25", "IsClosed": true, "IsFree": false, "Description": "Christmas Day" }
       ]
     },
-    "Shop": {
-      "Name": "Grande Galerie de l’Évolution shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-          { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null,"IsClosed": true },
-          { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-          { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-          { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-          { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00" },
-          { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Grande Galerie de l’Évolution shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "10:00",
+            "ClosingTime": "18:00"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 9,
@@ -491,18 +863,50 @@
         { "RuleType": "ExtremeHeatClosing", "Description": "In case of extreme heat, the Gallery may be partially or completely closed to the public."}
       ]
     },
-    "Shop": {
-      "Name": "Galerie de Paléontologie et d’Anatomie comparée shop",
-      "OpeningHours": [
-        { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
-        { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-        { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00" },
-        { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00" },
-        { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00" },
-        { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "17:00" },
-        { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "17:00" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Galerie de Paléontologie et d’Anatomie comparée shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00",
+            "IsFree": false
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "10:00",
+            "ClosingTime": "17:00"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 10,
@@ -564,24 +968,71 @@
         { "Date": "12-25", "IsClosed": true, "IsFree": false, "Description": "Christmas Day" }
       ]
     },
-    "Shop": {
-      "Name": "Musée de l'Homme shop",
-      "OpeningHours": [
-         { "DayOfWeek": 1, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-         { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-         { "DayOfWeek": 3, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-         { "DayOfWeek": 4, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-         { "DayOfWeek": 5, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-         { "DayOfWeek": 6, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-         { "DayOfWeek": 7, "OpeningTime": "11:00", "ClosingTime": "19:00" }
-      ],
-      "ExceptionalDays": [
-        { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-        { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-        { "Date": "07-14", "IsClosed": true, "Description": "Bastille Day" },
-        { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-      ]
-    }
+    "Shop": [
+      {
+        "Name": "Musée de l'Homme shop",
+        "OpeningHours": [
+          {
+            "DayOfWeek": 1,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          },
+          {
+            "DayOfWeek": 2,
+            "OpeningTime": null,
+            "ClosingTime": null,
+            "IsClosed": true
+          },
+          {
+            "DayOfWeek": 3,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          },
+          {
+            "DayOfWeek": 4,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          },
+          {
+            "DayOfWeek": 5,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          },
+          {
+            "DayOfWeek": 6,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          },
+          {
+            "DayOfWeek": 7,
+            "OpeningTime": "11:00",
+            "ClosingTime": "19:00"
+          }
+        ],
+        "ExceptionalDays": [
+          {
+            "Date": "01-01",
+            "IsClosed": true,
+            "Description": "New Year's Day"
+          },
+          {
+            "Date": "05-01",
+            "IsClosed": true,
+            "Description": "Labor Day"
+          },
+          {
+            "Date": "07-14",
+            "IsClosed": true,
+            "Description": "Bastille Day"
+          },
+          {
+            "Date": "12-25",
+            "IsClosed": true,
+            "Description": "Christmas Day"
+          }
+        ]
+      }
+    ]
   },
   {
     "MuseumId": 12,
@@ -744,7 +1195,7 @@
         },
         {
           "Id": 2,
-          "StartDate": "02-29",
+          "StartDate": "03-01",
           "EndDate": "10-26",
           "Description": "Summer Season for Jardin des Plantes",
           "OpeningHours": [
@@ -831,8 +1282,8 @@
         {
           "Id": 1,
           "StartDate": "11-01",
-          "EndDate": "02-29",
-          "Description": "Winter Season for Arboretum Versilles",
+          "EndDate": "02-28",
+          "Description": "Winter Season for Arboretum Versailles",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
@@ -848,7 +1299,7 @@
           "Id": 2,
           "StartDate": "03-01",
           "EndDate": "10-31",
-          "Description": "Summer Season for Arboretum Versilles",
+          "Description": "Summer Season for Arboretum Versailles",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
@@ -869,7 +1320,12 @@
       "SpecialRules": [
         {
          "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "IsFree": true },
+          "Condition": {
+            "ConditionId": 8,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "IsFree": true
+          },
           "Description": "Free entry on the first Sunday of each month."
         }
       ]
@@ -921,7 +1377,13 @@
       "SpecialRules": [
         {
           "RuleType": "FreeEntry",
-          "Condition": { "DayOfWeek": 7, "WeekOfMonth": 1, "MonthRange": "10-03", "IsFree": true },
+          "Condition": {
+            "ConditionId": 9,
+            "DayOfWeek": 7,
+            "WeekOfMonth": 1,
+            "MonthRange": "10-03",
+            "IsFree": true
+          },
           "Description": "Free entry on the first Sunday of each month from October to March."
         }
       ]
@@ -1117,7 +1579,15 @@
       "SpecialRules": [
         {
           "RuleType": "LateOpeningForTemporaryExhibitions",
-          "Condition": { "DayOfWeek": 4, "StartTime": "10:00", "EndTime": "21:30", "IsFree": false, "LastEntryOffset": "-00:45", "RoomClearingOffset": "-00:30" },
+          "Condition": {
+            "ConditionId": 10,
+            "DayOfWeek": 4,
+            "StartTime": "10:00",
+            "EndTime": "21:30",
+            "IsFree": false,
+            "LastEntryOffset": "-00:45",
+            "RoomClearingOffset": "-00:30"
+          },
           "Description": "Free entry on the first Sunday of each month"
         }
       ]

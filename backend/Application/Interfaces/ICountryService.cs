@@ -4,10 +4,10 @@ namespace Backend.Application.Interfaces
 {
     public interface ICountryService
     {
-        Task<IEnumerable<CountryDTO>> GetAllCountriesAsync();
-        Task<CountryDTO?> GetCountryByIdAsync(int id);
-        Task<CountryDTO> AddCountryAsync(CountryDTO countryDto);
-        Task<bool> UpdateCountryAsync(int id, CountryDTO countryDto);
+        Task<IEnumerable<CountryDto>> GetAllCountriesAsync();
+        Task<CountryDto?> GetCountryByIdAsync(int id);
+        Task<CountryDto> AddCountryAsync(CountryDto countryDto);
+        Task<bool> UpdateCountryAsync(int id, CountryDto countryDto);
         Task<bool> DeleteCountryAsync(int id);
     }
 }

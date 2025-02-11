@@ -18,28 +18,28 @@ namespace Backend.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<CountryDTO>> GetAllCountriesAsync()
+        public async Task<IEnumerable<CountryDto>> GetAllCountriesAsync()
         {
             var countries = await _context.Countries.Include(c => c.Cities).ToListAsync();
-            return _mapper.Map<IEnumerable<CountryDTO>>(countries);
+            return _mapper.Map<IEnumerable<CountryDto>>(countries);
         }
 
-        public async Task<CountryDTO?> GetCountryByIdAsync(int id)
+        public async Task<CountryDto?> GetCountryByIdAsync(int id)
         {
             var country = await _context.Countries.Include(c => c.Cities)
                 .FirstOrDefaultAsync(c => c.CountryId == id);
-            return country == null ? null : _mapper.Map<CountryDTO>(country);
+            return country == null ? null : _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<CountryDTO> AddCountryAsync(CountryDTO countryDto)
+        public async Task<CountryDto> AddCountryAsync(CountryDto countryDto)
         {
             var country = _mapper.Map<Country>(countryDto);
             _context.Countries.Add(country);
             await _context.SaveChangesAsync();
-            return _mapper.Map<CountryDTO>(country);
+            return _mapper.Map<CountryDto>(country);
         }
 
-        public async Task<bool> UpdateCountryAsync(int id, CountryDTO countryDto)
+        public async Task<bool> UpdateCountryAsync(int id, CountryDto countryDto)
         {
             var existingCountry = await _context.Countries.FindAsync(id);
             if (existingCountry == null) return false;

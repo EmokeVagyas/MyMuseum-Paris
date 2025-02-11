@@ -16,9 +16,9 @@ namespace Backend.Infrastructure.Data
         // public DbSet<UserQuestionnaireResponse> UserQuestionnaireResponses { get; set; }
         // public DbSet<GroupQuestionnaireResponse> GroupQuestionnaireResponses { get; set; }
         // public DbSet<UserTravelDay> UserTravelDays { get; set; }
+        // public DbSet<Question> Questions { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
-        // public DbSet<Question> Questions { get; set; }
         
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<MuseumSchedule> MuseumSchedules { get; set; }
@@ -28,8 +28,11 @@ namespace Backend.Infrastructure.Data
         public DbSet<OpeningHour> OpeningHours { get; set; }
         public DbSet<ExceptionalDay> ExceptionalDays { get; set; }
         public DbSet<OpeningPeriod> OpeningPeriods { get; set; }
-        //public DbSet<SpecialRule> SpecialRules { get; set; }
-        //public DbSet<Condition> Conditions { get; set; }
+        public DbSet<SpecialRule> SpecialRules { get; set; }
+        public DbSet<Condition> Conditions { get; set; }
+        public DbSet<ConditionExcludedMonth> ConditionExcludedMonths { get; set; }
+        public DbSet<MuseumAccessibility> MuseumAccessibilities { get; set; }
+        public DbSet<MuseumLanguage> MuseumLanguages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,15 +40,34 @@ namespace Backend.Infrastructure.Data
 
             // MUSEUM RELATIONS
             modelBuilder.Entity<Museum>()
-                .HasOne(m => m.Shop)
-                .WithOne()
-                .HasForeignKey<Shop>(s => s.ShopId);
+                .HasMany(m => m.Shops)
+                .WithOne(s => s.Museum)
+                .HasForeignKey(s => s.ShopId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Museum>()
-                .HasMany(m => m.MuseumSchedules)
+                .HasMany(m => m.Schedules)
                 .WithOne(ms => ms.Museum)
                 .HasForeignKey(ms => ms.MuseumId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // MUSEUMACCESSIBILITY RELATIONS
+            modelBuilder.Entity<MuseumAccessibility>()
+                .HasKey(ma => new { ma.MuseumId, ma.Accessibility });
+
+            modelBuilder.Entity<MuseumAccessibility>()
+                .HasOne(ma => ma.Museum)
+                .WithMany(m => m.Accessibilities)
+                .HasForeignKey(ma => ma.MuseumId);
+
+            // MUSEUMLANGUAGE RELATIONS
+            modelBuilder.Entity<MuseumLanguage>()
+                .HasKey(ml => new { ml.MuseumId, ml.Language });
+
+            modelBuilder.Entity<MuseumLanguage>()
+                .HasOne(ml => ml.Museum)
+                .WithMany(m => m.Languages)
+                .HasForeignKey(ml => ml.MuseumId);
 
             // SHOP RELATIONS
             modelBuilder.Entity<Shop>()
@@ -67,13 +89,19 @@ namespace Backend.Infrastructure.Data
                 .HasForeignKey(ed => ed.ScheduleId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Schedule>()
+                .HasMany(s => s.SpecialRules)
+                .WithOne(sr => sr.Schedule)
+                .HasForeignKey(sr => sr.ScheduleId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             // MUSEUM SCHEDULE RELATIONS
             modelBuilder.Entity<MuseumSchedule>()
                 .HasKey(ms => new { ms.MuseumId, ms.ScheduleId });
 
             modelBuilder.Entity<MuseumSchedule>()
                 .HasOne(ms => ms.Museum)
-                .WithMany(m => m.MuseumSchedules)
+                .WithMany(m => m.Schedules)
                 .HasForeignKey(ms => ms.MuseumId);
 
             modelBuilder.Entity<MuseumSchedule>()
@@ -111,7 +139,7 @@ namespace Backend.Infrastructure.Data
             modelBuilder.Entity<SpecialRule>()
                 .HasOne(sr => sr.Condition)
                 .WithOne()
-                .HasForeignKey<Condition>(c => c.ConditionId);
+                .HasForeignKey<SpecialRule>(sr => sr.ConditionId);
 
             // MUSEUM FEATURE ASSOCIATION RELATIONS
             modelBuilder.Entity<MuseumFeatureAssociation>()
@@ -119,7 +147,7 @@ namespace Backend.Infrastructure.Data
 
             modelBuilder.Entity<MuseumFeatureAssociation>()
                 .HasOne(mfa => mfa.Museum)
-                .WithMany(m => m.MuseumFeatureAssociations)
+                .WithMany(m => m.FeatureAssociations)
                 .HasForeignKey(mfa => mfa.MuseumId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -127,6 +155,17 @@ namespace Backend.Infrastructure.Data
                 .HasOne(mfa => mfa.MuseumFeatureOption)
                 .WithMany()
                 .HasForeignKey(mfa => mfa.MuseumFeatureOptionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // CONDITION EXCLUDED MOONTH RELATIONS
+            modelBuilder.Entity<ConditionExcludedMonth>()
+                .HasKey(cem => new { cem.ConditionId, cem.ExcludedMonth });
+
+            // CONDITION RELATIONS
+            modelBuilder.Entity<Condition>()
+                .HasMany(c => c.ExcludedMonths)
+                .WithOne(cem => cem.Condition)
+                .HasForeignKey(cem => cem.ConditionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // GROUP QUESTIONNAIRE RESPONSE RELATIONS

@@ -7,10 +7,10 @@ namespace Backend.Application.DTOs
     {
         public int DayOfWeek { get; set; }
 
-        [JsonConverter(typeof(TimeOnlyJsonConverter))]
+        [JsonConverter(typeof(TimeDayJsonConverter))]
         public TimeOnly? OpeningTime { get; set; }
 
-        [JsonConverter(typeof(TimeOnlyJsonConverter))]
+        [JsonConverter(typeof(TimeDayJsonConverter))]
         public TimeOnly? ClosingTime { get; set; }
 
         public bool IsFree { get; set; }

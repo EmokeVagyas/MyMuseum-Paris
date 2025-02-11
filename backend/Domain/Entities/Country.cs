@@ -4,6 +4,6 @@
     {
         public int CountryId { get; set; }
         public required string Name { get; set; }
-        public ICollection<City>? Cities { get; set; }
+        public List<City>? Cities { get; set; }
     }
 }

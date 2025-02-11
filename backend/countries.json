@@ -1,14 +1,36 @@
 ﻿[
   {
     "CountryId": 1,
-    "CountryName": "France"
+    "CountryName": "France",
+    "Cities": [
+      {
+        "CityId": 1,
+        "CityName": "Paris"
+      },
+      {
+        "CityId": 4,
+        "CityName": "Lyon"
+      }
+    ]
   },
   {
     "CountryId": 2,
-    "CountryName": "United Kingdom"
+    "CountryName": "United Kingdom",
+    "Cities": [
+      {
+        "CityId": 2,
+        "CityName": "London"
+      }
+    ]
   },
   {
     "CountryId": 3,
-    "CountryName": "Germany"
+    "CountryName": "Germany",
+    "Cities": [
+      {
+        "CityId": 3,
+        "CityName": "Berlin"
+      }
+    ]
   }
 ]

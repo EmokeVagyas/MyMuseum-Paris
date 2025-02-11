@@ -7,6 +7,9 @@ namespace Backend.Domain.Entities
         public int ShopId { get; set; }
         public required string Name { get; set; }
 
+        // Relations
+        public int MuseumId { get; set; }
+        public Museum Museum { get; set; } = null!;
         public required List<ShopSchedule> ShopSchedules { get; set; }
     }
 }

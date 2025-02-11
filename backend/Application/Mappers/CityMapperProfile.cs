@@ -6,9 +6,9 @@ public class CityMapperProfile : Profile
 {
     public CityMapperProfile()
     {
-        CreateMap<City, CityDTO>()
-            .ForMember(dest => dest.CountryName, opt => opt.MapFrom(src => src.Country != null ? src.Country.Name : "Unknown"));
+        //CreateMap<City, CityDto>()
+        //    .ForMember(dest => dest.CountryName, opt => opt.MapFrom(src => src.Country != null ? src.Country.Name : "Unknown"));
 
-        CreateMap<CityDTO, City>();
+        //CreateMap<CityDto, City>();
     }
 }

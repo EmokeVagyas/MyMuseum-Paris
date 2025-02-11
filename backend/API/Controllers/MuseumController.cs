@@ -25,7 +25,7 @@ public class MuseumController : ControllerBase
             return NotFound(new { message = "Museum not found" });
         }
 
-        var museumDto = _mapper.Map<MuseumDTO>(museum);
+        var museumDto = _mapper.Map<MuseumDto>(museum);
         return Ok(museumDto);
     }
 
@@ -33,7 +33,7 @@ public class MuseumController : ControllerBase
     public IActionResult GetAllMuseums()
     {
         var museums = _museumService.GetAllMuseums();
-        var museumDtos = _mapper.Map<List<MuseumDTO>>(museums);
+        var museumDtos = _mapper.Map<List<MuseumDto>>(museums);
         return Ok(museumDtos);
     }
 }

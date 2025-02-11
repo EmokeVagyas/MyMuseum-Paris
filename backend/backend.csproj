@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="API\NewFolder\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

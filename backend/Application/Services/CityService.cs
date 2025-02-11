@@ -19,7 +19,7 @@ public class CityService : ICityService
         _mapper = mapper;
     }
 
-    public async Task<CityDTO> GetCityByIdAsync(int cityId)
+    public async Task<CityDto> GetCityByIdAsync(int cityId)
     {
         var city = await _cityRepository.GetCityByIdAsync(cityId);
         if (city == null)
@@ -27,16 +27,16 @@ public class CityService : ICityService
             throw new Exception("City not found");
         }
 
-        return _mapper.Map<CityDTO>(city);
+        return _mapper.Map<CityDto>(city);
     }
 
-    public async Task<IEnumerable<CityDTO>> GetAllCitiesAsync()
+    public async Task<IEnumerable<CityDto>> GetAllCitiesAsync()
     {
         var cities = await _cityRepository.GetAllCitiesAsync();
-        return _mapper.Map<IEnumerable<CityDTO>>(cities);
+        return _mapper.Map<IEnumerable<CityDto>>(cities);
     }
 
-    public async Task<CityDTO> CreateCityAsync(CityDTO cityDto)
+    public async Task<CityDto> CreateCityAsync(CityDto cityDto)
     {
         var country = await _cityRepository.GetCountryByIdAsync(cityDto.CountryId);
         if (country == null)
@@ -53,10 +53,10 @@ public class CityService : ICityService
             throw new Exception("Failed to create city");
         }
 
-        return _mapper.Map<CityDTO>(createdCity);
+        return _mapper.Map<CityDto>(createdCity);
     }
 
-    public async Task<CityDTO> UpdateCityAsync(int cityId, CityDTO cityDto)
+    public async Task<CityDto> UpdateCityAsync(int cityId, CityDto cityDto)
     {
         var city = await _cityRepository.GetCityByIdAsync(cityId);
         if (city == null)
@@ -72,7 +72,7 @@ public class CityService : ICityService
             throw new Exception("Failed to update city");
         }
 
-        return _mapper.Map<CityDTO>(updatedCity);
+        return _mapper.Map<CityDto>(updatedCity);
     }
 
     public async Task<bool> DeleteCityAsync(int cityId)

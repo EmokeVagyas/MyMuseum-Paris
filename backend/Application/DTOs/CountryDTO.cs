@@ -1,9 +1,9 @@
 ﻿namespace Backend.Application.DTOs
 {
-    public class CountryDTO
+    public class CountryDto
     {
         public int CountryId { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public ICollection<string>? Cities { get; set; }
+        public string CountryName { get; set; } = string.Empty;
+        public ICollection<CityDto> Cities { get; set; } = [];
     }
 }

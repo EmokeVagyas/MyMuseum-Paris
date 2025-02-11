@@ -6,10 +6,10 @@ namespace Backend.Application.Interfaces
 {
     public interface ICityService
     {
-        Task<CityDTO> GetCityByIdAsync(int cityId);
-        Task<IEnumerable<CityDTO>> GetAllCitiesAsync();
-        Task<CityDTO> CreateCityAsync(CityDTO cityDto);
-        Task<CityDTO> UpdateCityAsync(int cityId, CityDTO cityDto);
+        Task<CityDto> GetCityByIdAsync(int cityId);
+        Task<IEnumerable<CityDto>> GetAllCitiesAsync();
+        Task<CityDto> CreateCityAsync(CityDto cityDto);
+        Task<CityDto> UpdateCityAsync(int cityId, CityDto cityDto);
         Task<bool> DeleteCityAsync(int cityId);
     }
 }

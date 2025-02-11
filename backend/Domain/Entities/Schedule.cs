@@ -9,5 +9,6 @@ namespace Backend.Domain.Entities
 
         public required List<OpeningPeriod> OpeningPeriods { get; set; }
         public required List<ExceptionalDay> ExceptionalDays { get; set; }
+        public required List<SpecialRule> SpecialRules { get; set; }
     }
 }

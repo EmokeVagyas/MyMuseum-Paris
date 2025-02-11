@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Backend.Domain.Entities
 {
     public class ExceptionalDay
     {
         public int ExceptionalDayId { get; set; }
+
+        [JsonConverter(typeof(DateOnlyJsonConverter))]
         public required DateOnly Date { get; set; }
         public bool? IsClosed { get; set; }
         public bool? IsFree { get; set; }

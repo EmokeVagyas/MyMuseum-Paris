@@ -4,8 +4,8 @@ namespace Backend.Application.DTOs
 {
     public class MuseumScheduleDto
     {
-        public required int MuseumId { get; set; }
-        public required TimeTableDto TimeTable { get; set; }
-        public required ShopDto Shop { get; set; }
+        public int MuseumId { get; set; }
+        public TimeTableDto TimeTable { get; set; }
+        public List<ShopDto> Shop { get; set; } = [];
     }
 }

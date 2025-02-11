@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Linq;
 using System;
 using System.Runtime.CompilerServices;
+using Backend.Application.DTOs;
+using AutoMapper;
 
 namespace Backend.Infrastructure.Data.Seeds
 {
@@ -16,48 +18,39 @@ namespace Backend.Infrastructure.Data.Seeds
         {
             using var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
 
             if (context.Museums.Any() && context.Cities.Any() && context.Countries.Any())
             {
                 return app;
             }
 
-            var countries = LoadFromJson<List<Country>>("countries.json");
-            var cities = LoadFromJson<List<City>>("cities.json");
+            var museumsDto = LoadFromJson<List<MuseumDto>>("museums-old.json");
+            var museums = mapper.Map<List<Museum>>(museumsDto);
+
+            var countryDtos = LoadFromJson<List<CountryDto>>("countries.json");
+            var countries = mapper.Map<List<Country>>(countryDtos);
 
             context.Countries.AddRange(countries);
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            foreach (var city in cities)
-            {
-                var country = context.Countries.FirstOrDefault(c => c.CountryId == city.CountryId);
-                if (country != null)
-                {
-                    city.CountryId = country.CountryId;
-                    context.Cities.Add(city);
-                }
-            }
-            context.SaveChanges();
+            var museumSchedules = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
 
-            var museumSchedules = LoadFromJson<List<MuseumSchedule>>("museumSchedule.json");
-
-            var museums = LoadFromJson<List<Museum>>("museums.json");
-
-            context.Museums.AddRange(museums);
-            context.SaveChanges();
+            //context.Museums.AddRange(museums);
+            //context.SaveChanges();
 
             var features = new List<MuseumFeature>
             {
-                new MuseumFeature { FeatureType = "Art" },
-                new MuseumFeature { FeatureType = "History" },
-                new MuseumFeature { FeatureType = "Science & Technology" },
-                new MuseumFeature { FeatureType = "Natural History" },
-                new MuseumFeature { FeatureType = "Culture & Ethnograhy" },
-                new MuseumFeature { FeatureType = "Other ( ex. Fashion, Cinema, Music, Sport, Perfume )" }
+                new() { FeatureType = "Art" },
+                new() { FeatureType = "History" },
+                new() { FeatureType = "Science & Technology" },
+                new() { FeatureType = "Natural History" },
+                new() { FeatureType = "Culture & Ethnograhy" },
+                new() { FeatureType = "Other ( ex. Fashion, Cinema, Music, Sport, Perfume )" }
             };
 
             context.MuseumFeatures.AddRange(features);
-            context.SaveChanges();
+            //context.SaveChanges();
 
             AddMuseumFeatureOptions(context);
 
@@ -71,50 +64,50 @@ namespace Backend.Infrastructure.Data.Seeds
 
             var artOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureOptionId = 1, MuseumFeatureId = 1, OptionName = "Classical ( Renessaince, Baroque, Neoclassical, Romanticism )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 2, MuseumFeatureId = 1, OptionName = "Impressionism ( Monet, Renoir, Degas )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 3, MuseumFeatureId = 1, OptionName = "Modern ( Post-Impressionism, Surrealism, Cubism )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 4, MuseumFeatureId = 1, OptionName = "Contemporary ( Minimalism, Abstract Expressionism )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 5, MuseumFeatureId = 1, OptionName = "Photography" },
+                new() { MuseumFeatureOptionId = 1, MuseumFeatureId = 1, OptionName = "Classical ( Renessaince, Baroque, Neoclassical, Romanticism )" },
+                new() { MuseumFeatureOptionId = 2, MuseumFeatureId = 1, OptionName = "Impressionism ( Monet, Renoir, Degas )" },
+                new() { MuseumFeatureOptionId = 3, MuseumFeatureId = 1, OptionName = "Modern ( Post-Impressionism, Surrealism, Cubism )" },
+                new() { MuseumFeatureOptionId = 4, MuseumFeatureId = 1, OptionName = "Contemporary ( Minimalism, Abstract Expressionism )" },
+                new() { MuseumFeatureOptionId = 5, MuseumFeatureId = 1, OptionName = "Photography" },
             };
 
             var historyOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureOptionId = 6, MuseumFeatureId = 2, OptionName = "Ancient ( Egypt, Greece, Rome, Asia )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 7, MuseumFeatureId = 2, OptionName = "Medieval" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 8, MuseumFeatureId = 2, OptionName = "Modern ( World Wars, 20th Century )" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 9, MuseumFeatureId = 2, OptionName = "French ( Royal France, Revolution, Napoleonic )" },
+                new() { MuseumFeatureOptionId = 6, MuseumFeatureId = 2, OptionName = "Ancient ( Egypt, Greece, Rome, Asia )" },
+                new() { MuseumFeatureOptionId = 7, MuseumFeatureId = 2, OptionName = "Medieval" },
+                new() { MuseumFeatureOptionId = 8, MuseumFeatureId = 2, OptionName = "Modern ( World Wars, 20th Century )" },
+                new() { MuseumFeatureOptionId = 9, MuseumFeatureId = 2, OptionName = "French ( Royal France, Revolution, Napoleonic )" },
             };
 
             var scienceOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureOptionId = 10, MuseumFeatureId = 3, OptionName = "Space & Astronomy" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 11, MuseumFeatureId = 3, OptionName = "Physics & Engineering" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 12, MuseumFeatureId = 3, OptionName = "Biology & Medicine" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 13, MuseumFeatureId = 3, OptionName = "Chemistry" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 14, MuseumFeatureId = 3, OptionName = "Geology" },
+                new() { MuseumFeatureOptionId = 10, MuseumFeatureId = 3, OptionName = "Space & Astronomy" },
+                new() { MuseumFeatureOptionId = 11, MuseumFeatureId = 3, OptionName = "Physics & Engineering" },
+                new() { MuseumFeatureOptionId = 12, MuseumFeatureId = 3, OptionName = "Biology & Medicine" },
+                new() { MuseumFeatureOptionId = 13, MuseumFeatureId = 3, OptionName = "Chemistry" },
+                new() { MuseumFeatureOptionId = 14, MuseumFeatureId = 3, OptionName = "Geology" },
             };
 
             var naturalHistoryOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureOptionId = 15, MuseumFeatureId = 4, OptionName = "Dinosaurs & Prehistoric Life" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 16, MuseumFeatureId = 4, OptionName = "Human Evolution" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 17, MuseumFeatureId = 4, OptionName = "Marine Life & Oceanography" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 18, MuseumFeatureId = 4, OptionName = "Botany & Plant Life" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 19, MuseumFeatureId = 4, OptionName = "Geology & Mineralogy" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 20, MuseumFeatureId = 4, OptionName = "Wildlife & Zoology" },
+                new() { MuseumFeatureOptionId = 15, MuseumFeatureId = 4, OptionName = "Dinosaurs & Prehistoric Life" },
+                new() { MuseumFeatureOptionId = 16, MuseumFeatureId = 4, OptionName = "Human Evolution" },
+                new() { MuseumFeatureOptionId = 17, MuseumFeatureId = 4, OptionName = "Marine Life & Oceanography" },
+                new() { MuseumFeatureOptionId = 18, MuseumFeatureId = 4, OptionName = "Botany & Plant Life" },
+                new() { MuseumFeatureOptionId = 19, MuseumFeatureId = 4, OptionName = "Geology & Mineralogy" },
+                new() { MuseumFeatureOptionId = 20, MuseumFeatureId = 4, OptionName = "Wildlife & Zoology" },
             };
 
             var cultureOptions = new List<MuseumFeatureOption>
             {
-                new MuseumFeatureOption { MuseumFeatureOptionId = 21, MuseumFeatureId = 5, OptionName = "Ancient Civilizations" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 22, MuseumFeatureId = 5, OptionName = "World Religions & Beliefs" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 23, MuseumFeatureId = 5, OptionName = "Indigineous Cultures" },
-                new MuseumFeatureOption { MuseumFeatureOptionId = 24, MuseumFeatureId = 5, OptionName = "Cultural Arfifacts & Traditions" },
+                new() { MuseumFeatureOptionId = 21, MuseumFeatureId = 5, OptionName = "Ancient Civilizations" },
+                new() { MuseumFeatureOptionId = 22, MuseumFeatureId = 5, OptionName = "World Religions & Beliefs" },
+                new() { MuseumFeatureOptionId = 23, MuseumFeatureId = 5, OptionName = "Indigineous Cultures" },
+                new() { MuseumFeatureOptionId = 24, MuseumFeatureId = 5, OptionName = "Cultural Arfifacts & Traditions" },
             };
 
             context.MuseumFeatureOptions.AddRange(artOptions.Concat(historyOptions).Concat(scienceOptions).Concat(naturalHistoryOptions).Concat(cultureOptions));
-            context.SaveChanges();
+            //context.SaveChanges();
         }
 
         private static void AddMuseumFeatureAssociations(AppDbContext context)
@@ -124,7 +117,7 @@ namespace Backend.Infrastructure.Data.Seeds
             var museumFeatureAssociations = LoadFromJson<List<MuseumFeatureAssociation>>("museum_feature_associations.json");
 
             context.MuseumFeatureAssociations.AddRange(museumFeatureAssociations);
-            context.SaveChanges();
+            //context.SaveChanges();
         }
 
         private static T LoadFromJson<T>(string jsonPath) where T : class
