@@ -322,13 +322,11 @@ namespace Backend.Migrations
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("LastEntryOffset")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<TimeSpan?>("LastEntryOffset")
+                        .HasColumnType("interval");
 
-                    b.Property<string>("RoomClearingOffset")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<TimeSpan?>("RoomClearingOffset")
+                        .HasColumnType("interval");
 
                     b.Property<int>("ScheduleId")
                         .HasColumnType("integer");
@@ -362,7 +360,10 @@ namespace Backend.Migrations
             modelBuilder.Entity("Backend.Domain.Entities.Shop", b =>
                 {
                     b.Property<int>("ShopId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ShopId"));
 
                     b.Property<int>("MuseumId")
                         .HasColumnType("integer");
@@ -372,6 +373,8 @@ namespace Backend.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("ShopId");
+
+                    b.HasIndex("MuseumId");
 
                     b.ToTable("Shops");
                 });
@@ -383,27 +386,6 @@ namespace Backend.Migrations
 
                     b.Property<int>("ScheduleId")
                         .HasColumnType("integer");
-
-                    b.Property<TimeOnly?>("ClosingTime")
-                        .HasColumnType("time without time zone");
-
-                    b.Property<DateOnly?>("Date")
-                        .HasColumnType("date");
-
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsClosed")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("IsFree")
-                        .HasColumnType("boolean");
-
-                    b.Property<TimeOnly?>("OpeningTime")
-                        .HasColumnType("time without time zone");
 
                     b.HasKey("ShopId", "ScheduleId");
 
@@ -608,7 +590,7 @@ namespace Backend.Migrations
                 {
                     b.HasOne("Backend.Domain.Entities.Museum", "Museum")
                         .WithMany("Shops")
-                        .HasForeignKey("ShopId")
+                        .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -637,7 +619,7 @@ namespace Backend.Migrations
             modelBuilder.Entity("Backend.Domain.Entities.SpecialRule", b =>
                 {
                     b.HasOne("Backend.Domain.Entities.Condition", "Condition")
-                        .WithOne()
+                        .WithOne("SpecialRule")
                         .HasForeignKey("Backend.Domain.Entities.SpecialRule", "ConditionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -656,6 +638,8 @@ namespace Backend.Migrations
             modelBuilder.Entity("Backend.Domain.Entities.Condition", b =>
                 {
                     b.Navigation("ExcludedMonths");
+
+                    b.Navigation("SpecialRule");
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Country", b =>

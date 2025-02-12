@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCommit : Migration
+    public partial class InitialCreation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -172,8 +172,8 @@ namespace Backend.Migrations
                     StartDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    LastEntryOffset = table.Column<string>(type: "text", nullable: false),
-                    RoomClearingOffset = table.Column<string>(type: "text", nullable: false),
+                    LastEntryOffset = table.Column<TimeSpan>(type: "interval", nullable: true),
+                    RoomClearingOffset = table.Column<TimeSpan>(type: "interval", nullable: true),
                     ScheduleId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -359,7 +359,8 @@ namespace Backend.Migrations
                 name: "Shops",
                 columns: table => new
                 {
-                    ShopId = table.Column<int>(type: "integer", nullable: false),
+                    ShopId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
                     MuseumId = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -367,8 +368,8 @@ namespace Backend.Migrations
                 {
                     table.PrimaryKey("PK_Shops", x => x.ShopId);
                     table.ForeignKey(
-                        name: "FK_Shops_Museums_ShopId",
-                        column: x => x.ShopId,
+                        name: "FK_Shops_Museums_MuseumId",
+                        column: x => x.MuseumId,
                         principalTable: "Museums",
                         principalColumn: "MuseumId",
                         onDelete: ReferentialAction.Cascade);
@@ -379,14 +380,7 @@ namespace Backend.Migrations
                 columns: table => new
                 {
                     ScheduleId = table.Column<int>(type: "integer", nullable: false),
-                    ShopId = table.Column<int>(type: "integer", nullable: false),
-                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
-                    OpeningTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
-                    ClosingTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
-                    IsFree = table.Column<bool>(type: "boolean", nullable: false),
-                    IsClosed = table.Column<bool>(type: "boolean", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: true),
-                    Description = table.Column<string>(type: "text", nullable: true)
+                    ShopId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -449,6 +443,11 @@ namespace Backend.Migrations
                 name: "IX_OpeningPeriods_ScheduleId",
                 table: "OpeningPeriods",
                 column: "ScheduleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shops_MuseumId",
+                table: "Shops",
+                column: "MuseumId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ShopSchedules_ScheduleId",

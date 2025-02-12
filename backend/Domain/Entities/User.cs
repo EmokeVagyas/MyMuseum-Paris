@@ -1,7 +1,10 @@
-﻿namespace Backend.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Backend.Domain.Entities
 {
     public class User
     {
+        [Key]
         public required int UserID { get; set; }
         public required string Email { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;

@@ -59,7 +59,8 @@ namespace Backend.Application.Mappers
             //        Description = s.Description ?? "No description available"
             //    }).ToList()));
 
-            CreateMap<MuseumDto, Museum>()
+            CreateMap<MuseumDto, Museum>() 
+                .ForMember(dest => dest.MuseumId, opt => opt.MapFrom(src => src.MuseumId))
                 .ForMember(dest => dest.Accessibilities, opt => opt.MapFrom(src => src.Accessibilities.Select(a => new MuseumAccessibility
                 {
                     MuseumId = src.MuseumId,

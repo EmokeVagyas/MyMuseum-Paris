@@ -1,5 +1,6 @@
 ﻿using Backend.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
@@ -17,7 +18,9 @@ namespace Backend.Domain.Entities
         public bool GuidedTours { get; set; }
         public bool AudioGuide { get; set; }
 
+        // Relations
         public int CityId { get; set; }
+        [ForeignKey("CityId")]
         public City City { get; set; } = null!;
 
         public List<MuseumSchedule> Schedules { get; set; } = [];

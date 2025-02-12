@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
@@ -7,12 +8,14 @@ namespace Backend.Domain.Entities
     /// </summary>
     public class MuseumFeatureAssociation
     {
+        [Key]
         public int MuseumId { get; set; }
         [ForeignKey("MuseumId")]
         public Museum Museum { get; set; }
 
+        [Key]
         public int MuseumFeatureOptionId { get; set; }
         [ForeignKey("MuseumFeatureOptionId")]
-        public MuseumFeatureOption? MuseumFeatureOption { get; set; }
+        public MuseumFeatureOption MuseumFeatureOption { get; set; }
     }
 }

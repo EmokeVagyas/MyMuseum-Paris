@@ -444,6 +444,7 @@
             {
               "RuleType": "LateOpening",
               "Condition": {
+                "ConditionId": 7,
                 "DayOfWeek": 3,
                 "WeekOfMonth": 1,
                 "StartTime": "18:00",
@@ -500,7 +501,7 @@
         { 
           "RuleType": "FreeEntry",
           "Condition": {
-            "ConditionId": 7,
+            "ConditionId": 8,
             "DayOfWeek": 7,
             "WeekOfMonth": 1,
             "MonthRange": "10-03",
@@ -575,7 +576,7 @@
             { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true }
           ],
           "LastEntryOffset": "-00:30",
-          "RoomClosureOffset": "-00:15"
+          "RoomClearingOffset": "-00:15"
         }
       ],
       "ExceptionalDays": [
@@ -1120,7 +1121,7 @@
         {
          "RuleType": "FreeEntry",
           "Condition": {
-            "ConditionId": 8,
+            "ConditionId": 9,
             "DayOfWeek": 7,
             "WeekOfMonth": 1,
             "IsFree": true
@@ -1177,7 +1178,7 @@
         {
           "RuleType": "FreeEntry",
           "Condition": {
-            "ConditionId": 9,
+            "ConditionId": 10,
             "DayOfWeek": 7,
             "WeekOfMonth": 1,
             "MonthRange": "10-03",
@@ -1386,7 +1387,7 @@
         {
           "RuleType": "LateOpeningForTemporaryExhibitions",
           "Condition": {
-            "ConditionId": 10,
+            "ConditionId": 11,
             "DayOfWeek": 4,
             "StartTime": "10:00",
             "EndTime": "21:30",

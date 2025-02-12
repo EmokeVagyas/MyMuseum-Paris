@@ -1,9 +1,12 @@
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
     public class OpeningHour
     {
+        [Key]
         public int OpeningHourId { get; set; }
         public int DayOfWeek { get; set; }
 
@@ -15,11 +18,11 @@ namespace Backend.Domain.Entities
 
         public bool IsFree { get; set; }
         public bool IsClosed { get; set; }
-        public int? ShopId { get; set; }
 
         // Relationships
         public int? ExceptionalDayId { get; set; }
-        public ExceptionalDay ExceptionalDay { get; set; } = null!;
+        [ForeignKey("ExceptionalDayId")]
+        public ExceptionalDay? ExceptionalDay { get; set; }
 
     }
 }

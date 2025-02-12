@@ -1,5 +1,4 @@
-﻿// File: Backend/Infrastructure/Data/AppDbContext.cs
-using Backend.Domain.Entities;
+﻿using Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Infrastructure.Data
@@ -42,7 +41,7 @@ namespace Backend.Infrastructure.Data
             modelBuilder.Entity<Museum>()
                 .HasMany(m => m.Shops)
                 .WithOne(s => s.Museum)
-                .HasForeignKey(s => s.ShopId)
+                .HasForeignKey(s => s.MuseumId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Museum>()
@@ -75,7 +74,7 @@ namespace Backend.Infrastructure.Data
                 .WithOne(ss => ss.Shop)
                 .HasForeignKey(ss => ss.ShopId)
                 .OnDelete(DeleteBehavior.Cascade);
-
+            
             // SCHEDULE RELATIONS
             modelBuilder.Entity<Schedule>()
                 .HasMany(s => s.OpeningPeriods)
@@ -138,7 +137,7 @@ namespace Backend.Infrastructure.Data
             // SPECIAL RULE RELATIONS
             modelBuilder.Entity<SpecialRule>()
                 .HasOne(sr => sr.Condition)
-                .WithOne()
+                .WithOne(c => c.SpecialRule)
                 .HasForeignKey<SpecialRule>(sr => sr.ConditionId);
 
             // MUSEUM FEATURE ASSOCIATION RELATIONS

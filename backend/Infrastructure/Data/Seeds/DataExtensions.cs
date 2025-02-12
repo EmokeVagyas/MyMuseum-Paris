@@ -14,29 +14,76 @@ namespace Backend.Infrastructure.Data.Seeds
             var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             var mapper = scope.ServiceProvider.GetRequiredService<IMapper>();
 
-            if (context.Museums.Any() && context.Cities.Any() && context.Countries.Any())
+            if (!context.Countries.Any())
             {
-                return app;
+                AddCountries(context, mapper);
             }
 
+            if (!context.Museums.Any())
+            {
+                AddMuseums(context, mapper);
+            }
+
+            if (!context.MuseumSchedules.Any())
+            {
+                AddMuseumSchedules(context, mapper);
+            }
+
+            if (!context.Shops.Any())
+            {
+                AddShops(context, mapper);
+            }
             
+            if (!context.MuseumFeatures.Any())
+            {
+                AddMuseumFeatures(context);
+                AddMuseumFeatureOptions(context);
+                AddMuseumFeatureAssociations(mapper, context);
+            }
+            
+            return app;
+        }
+
+        private static void AddCountries(AppDbContext context, IMapper mapper)
+        {
+            if (context.Countries.Any()) return;
+
             var countryDtos = LoadFromJson<List<CountryDto>>("countries.json");
             var countries = mapper.Map<List<Country>>(countryDtos);
+
             context.Countries.AddRange(countries);
             context.SaveChanges();
+        }
 
-            var museumsDto = LoadFromJson<List<MuseumDto>>("museums-old.json");
-            var museums = mapper.Map<List<Museum>>(museumsDto);
+        private static void AddMuseums(AppDbContext context, IMapper mapper)
+        {
+            if (context.Museums.Any()) return;
+
+            var museumDtos = LoadFromJson<List<MuseumDto>>("museums-old.json");
+            var museums = mapper.Map<List<Museum>>(museumDtos);
+
             context.Museums.AddRange(museums);
             context.SaveChanges();
+        }
+
+        private static void AddMuseumSchedules(AppDbContext context, IMapper mapper)
+        {
+            if (context.MuseumSchedules.Any()) return;
 
             var museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
-            //var museumSchedules = mapper.Map<List<MuseumSchedule>>(museumScheduleDtos);
-            //context.MuseumSchedules.AddRange(museumSchedules);
-            //context.SaveChanges();
+            var museumSchedules = mapper.Map<List<MuseumSchedule>>(museumScheduleDtos);
 
-            museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
+            context.MuseumSchedules.AddRange(museumSchedules);
+            context.SaveChanges();
+        }
+
+        private static void AddShops(AppDbContext context, IMapper mapper)
+        {
+            if (context.Shops.Any()) return;
+
+            var museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
             var shops = new List<Shop>();
+
             foreach (var dto in museumScheduleDtos)
             {
                 if (dto == null || dto.Shop == null)
@@ -47,27 +94,25 @@ namespace Backend.Infrastructure.Data.Seeds
                 var res = mapper.Map<List<Shop>>(dto);
                 shops.AddRange(res);
             }
+
             context.Shops.AddRange(shops);
             context.SaveChanges();
+        }
 
+        private static void AddMuseumFeatures(AppDbContext context)
+        {
             var features = new List<MuseumFeature>
-            {
-                new() { FeatureType = "Art" },
-                new() { FeatureType = "History" },
-                new() { FeatureType = "Science & Technology" },
-                new() { FeatureType = "Natural History" },
-                new() { FeatureType = "Culture & Ethnograhy" },
-                new() { FeatureType = "Other ( ex. Fashion, Cinema, Music, Sport, Perfume )" }
-            };
+                {
+                    new() { FeatureType = "Art" },
+                    new() { FeatureType = "History" },
+                    new() { FeatureType = "Science & Technology" },
+                    new() { FeatureType = "Natural History" },
+                    new() { FeatureType = "Culture & Ethnograhy" },
+                    new() { FeatureType = "Other ( ex. Fashion, Cinema, Music, Sport, Perfume )" }
+                };
 
             context.MuseumFeatures.AddRange(features);
             context.SaveChanges();
-
-            AddMuseumFeatureOptions(context);
-
-            AddMuseumFeatureAssociations(mapper, context);
-
-            return app;
         }
 
         private static void AddMuseumFeatureOptions(AppDbContext context)
