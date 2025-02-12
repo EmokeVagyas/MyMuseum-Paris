@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -8,11 +7,28 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialCommit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Conditions",
+                columns: table => new
+                {
+                    ConditionId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
+                    WeekOfMonth = table.Column<int>(type: "integer", nullable: false),
+                    StartTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
+                    EndTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
+                    IsFree = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Conditions", x => x.ConditionId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Countries",
                 columns: table => new
@@ -53,20 +69,6 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SpecialRule",
-                columns: table => new
-                {
-                    SpecialRuleId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    RuleType = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SpecialRule", x => x.SpecialRuleId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -78,6 +80,24 @@ namespace Backend.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UserID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ConditionExcludedMonths",
+                columns: table => new
+                {
+                    ConditionId = table.Column<int>(type: "integer", nullable: false),
+                    ExcludedMonth = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ConditionExcludedMonths", x => new { x.ConditionId, x.ExcludedMonth });
+                    table.ForeignKey(
+                        name: "FK_ConditionExcludedMonths_Conditions_ConditionId",
+                        column: x => x.ConditionId,
+                        principalTable: "Conditions",
+                        principalColumn: "ConditionId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -168,25 +188,30 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Condition",
+                name: "SpecialRules",
                 columns: table => new
                 {
-                    ConditionId = table.Column<int>(type: "integer", nullable: false),
-                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
-                    WeekOfMonth = table.Column<int>(type: "integer", nullable: false),
-                    StartTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
-                    EndTime = table.Column<TimeOnly>(type: "time without time zone", nullable: false),
-                    ExcludedMonths = table.Column<List<int>>(type: "integer[]", nullable: false),
-                    IsFree = table.Column<bool>(type: "boolean", nullable: false)
+                    SpecialRuleId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RuleType = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false),
+                    ConditionId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Condition", x => x.ConditionId);
+                    table.PrimaryKey("PK_SpecialRules", x => x.SpecialRuleId);
                     table.ForeignKey(
-                        name: "FK_Condition_SpecialRule_ConditionId",
+                        name: "FK_SpecialRules_Conditions_ConditionId",
                         column: x => x.ConditionId,
-                        principalTable: "SpecialRule",
-                        principalColumn: "SpecialRuleId",
+                        principalTable: "Conditions",
+                        principalColumn: "ConditionId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SpecialRules_Schedules_ScheduleId",
+                        column: x => x.ScheduleId,
+                        principalTable: "Schedules",
+                        principalColumn: "ScheduleId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -200,12 +225,9 @@ namespace Backend.Migrations
                     Location = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Environment = table.Column<int>(type: "integer", nullable: false),
-                    Accessibility = table.Column<int>(type: "integer", nullable: false),
-                    Languages = table.Column<int>(type: "integer", nullable: false),
                     GuidedTours = table.Column<bool>(type: "boolean", nullable: false),
                     AudioGuide = table.Column<bool>(type: "boolean", nullable: false),
-                    ShopId = table.Column<int>(type: "integer", nullable: false),
-                    CityId = table.Column<int>(type: "integer", nullable: true)
+                    CityId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -214,7 +236,8 @@ namespace Backend.Migrations
                         name: "FK_Museums_Cities_CityId",
                         column: x => x.CityId,
                         principalTable: "Cities",
-                        principalColumn: "CityId");
+                        principalColumn: "CityId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -249,7 +272,25 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FeatureAssociations",
+                name: "MuseumAccessibilities",
+                columns: table => new
+                {
+                    MuseumId = table.Column<int>(type: "integer", nullable: false),
+                    Accessibility = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MuseumAccessibilities", x => new { x.MuseumId, x.Accessibility });
+                    table.ForeignKey(
+                        name: "FK_MuseumAccessibilities_Museums_MuseumId",
+                        column: x => x.MuseumId,
+                        principalTable: "Museums",
+                        principalColumn: "MuseumId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MuseumFeatureAssociations",
                 columns: table => new
                 {
                     MuseumId = table.Column<int>(type: "integer", nullable: false),
@@ -273,7 +314,25 @@ namespace Backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Schedules",
+                name: "MuseumLanguages",
+                columns: table => new
+                {
+                    MuseumId = table.Column<int>(type: "integer", nullable: false),
+                    Language = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MuseumLanguages", x => new { x.MuseumId, x.Language });
+                    table.ForeignKey(
+                        name: "FK_MuseumLanguages_Museums_MuseumId",
+                        column: x => x.MuseumId,
+                        principalTable: "Museums",
+                        principalColumn: "MuseumId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MuseumSchedules",
                 columns: table => new
                 {
                     MuseumId = table.Column<int>(type: "integer", nullable: false),
@@ -301,7 +360,8 @@ namespace Backend.Migrations
                 columns: table => new
                 {
                     ShopId = table.Column<int>(type: "integer", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    MuseumId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -318,8 +378,15 @@ namespace Backend.Migrations
                 name: "ShopSchedules",
                 columns: table => new
                 {
+                    ScheduleId = table.Column<int>(type: "integer", nullable: false),
                     ShopId = table.Column<int>(type: "integer", nullable: false),
-                    ScheduleId = table.Column<int>(type: "integer", nullable: false)
+                    DayOfWeek = table.Column<int>(type: "integer", nullable: false),
+                    OpeningTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
+                    ClosingTime = table.Column<TimeOnly>(type: "time without time zone", nullable: true),
+                    IsFree = table.Column<bool>(type: "boolean", nullable: false),
+                    IsClosed = table.Column<bool>(type: "boolean", nullable: false),
+                    Date = table.Column<DateOnly>(type: "date", nullable: true),
+                    Description = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -350,7 +417,7 @@ namespace Backend.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_MuseumFeatureAssociations_MuseumFeatureOptionId",
-                table: "FeatureAssociations",
+                table: "MuseumFeatureAssociations",
                 column: "MuseumFeatureOptionId");
 
             migrationBuilder.CreateIndex(
@@ -365,7 +432,7 @@ namespace Backend.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_MuseumSchedules_ScheduleId",
-                table: "Schedules",
+                table: "MuseumSchedules",
                 column: "ScheduleId");
 
             migrationBuilder.CreateIndex(
@@ -387,19 +454,36 @@ namespace Backend.Migrations
                 name: "IX_ShopSchedules_ScheduleId",
                 table: "ShopSchedules",
                 column: "ScheduleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SpecialRules_ConditionId",
+                table: "SpecialRules",
+                column: "ConditionId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SpecialRules_ScheduleId",
+                table: "SpecialRules",
+                column: "ScheduleId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Condition");
+                name: "ConditionExcludedMonths");
 
             migrationBuilder.DropTable(
-                name: "FeatureAssociations");
+                name: "MuseumAccessibilities");
 
             migrationBuilder.DropTable(
-                name: "Schedules");
+                name: "MuseumFeatureAssociations");
+
+            migrationBuilder.DropTable(
+                name: "MuseumLanguages");
+
+            migrationBuilder.DropTable(
+                name: "MuseumSchedules");
 
             migrationBuilder.DropTable(
                 name: "OpeningHours");
@@ -408,10 +492,10 @@ namespace Backend.Migrations
                 name: "ShopSchedules");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "SpecialRules");
 
             migrationBuilder.DropTable(
-                name: "SpecialRule");
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "MuseumFeatureOptions");
@@ -424,6 +508,9 @@ namespace Backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Shops");
+
+            migrationBuilder.DropTable(
+                name: "Conditions");
 
             migrationBuilder.DropTable(
                 name: "MuseumFeatures");

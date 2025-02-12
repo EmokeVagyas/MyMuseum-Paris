@@ -45,62 +45,116 @@
     },
     "Shop": [
       {
-        "Name": "Louvre Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "10:00",
-            "ClosingTime": "21:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "10:00",
-            "ClosingTime": "21:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:30"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "Name": "Librairie-Boutique",
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Librairie-Boutique",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:30" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:30" },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:30" },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "21:45" },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:30" },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:30" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+              { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+              { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+              { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
+      },
+      {
+        "Name": "Salon Denon",
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Salon Denon",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
+                { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "17:30" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
+      },
+      {
+        "Name": "Comptoir de Vente Denon",
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Comptoir de Vente Denon",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
+                { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "17:30" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
+      },
+      {
+        "Name": "Comptoir Napoleon",
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Comptoir Napoleon",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
+                { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "17:30" },
+                { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "17:30" }
+              ]
+              }
+            ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -149,56 +203,30 @@
     "Shop": [
       {
         "Name": "D'Orsay Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "09:30",
-            "ClosingTime": "21:10"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:30"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:30"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for D'Orsay Museum Shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:30" },
+                { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:30" },
+                { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "21:10" },
+                { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:30" },
+                { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:30" },
+                { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:30" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }   
       }
     ]
   },
@@ -253,71 +281,36 @@
     "Shop": [
       {
         "Name": "L'Orangerie Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "09:00",
-            "ClosingTime": "17:45"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "07-14",
-            "Description": "Bastille Day (morning closure)",
-            "OpeningHours": [
-              {
-                "OpeningTime": "09:00",
-                "ClosingTime": "12:00",
-                "IsClosed": true
-              },
-              {
-                "OpeningTime": "12:00",
-                "ClosingTime": "18:00"
-              }
-            ]
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for L'Orangerie Museum Shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:45" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:45" },
+                { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:45" },
+                { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "17:45" },
+                { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "17:45" },
+                { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "17:45" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "07-14", "Description": "Bastille Day (morning closure)",
+             "OpeningHours": [
+               { "OpeningTime": "09:00", "ClosingTime": "12:00", "IsClosed": true },
+               { "OpeningTime": "12:00", "ClosingTime": "18:00" }
+             ]
+            },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -421,77 +414,47 @@
       ]
     },
     "Shop": [
-      {
+      { 
         "Name": "Picasso Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "09:30",
-            "ClosingTime": "18:00"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labour Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ],
-        "SpecialRules": [
-          {
-            "RuleType": "LateOpening",
-            "Condition": {
-              "DayOfWeek": 3,
-              "WeekOfMonth": 1,
-              "StartTime": "18:00",
-              "EndTime": "22:00"
-            },
-            "Description": "Late opening on the first Wednesday of each month from 6 PM to 10 PM."
-          }
-        ]
-      }
-    ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Picasso Museum Shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00" },
+                { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00" },
+                { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00" },
+                { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labour Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ],
+          "SpecialRules": [
+            {
+              "RuleType": "LateOpening",
+              "Condition": {
+                "DayOfWeek": 3,
+                "WeekOfMonth": 1,
+                "StartTime": "18:00",
+                "EndTime": "22:00"
+              },
+              "Description": "Late opening on the first Wednesday of each month from 6 PM to 10 PM."
+            }
+          ]
+        }
+      } 
+    ] 
   },
   {
     "MuseumId": 6,
@@ -552,93 +515,45 @@
     "Shop": [
       {
         "Name": "Rodin Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labour Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          },
-          {
-            "Date": "12-24",
-            "Description": "Early closing on Christmas Eve",
-            "OpeningHours": [
-              {
-                "OpeningTime": "10:00",
-                "ClosingTime": "17:30"
-              },
-              {
-                "OpeningTime": "17:30",
-                "ClosingTime": "18:30",
-                "IsClosed": true
-              }
-            ]
-          },
-          {
-            "Date": "12-31",
-            "Description": "Early closing on New Year's Eve",
-            "OpeningHours": [
-              {
-                "OpeningTime": "10:00",
-                "ClosingTime": "17:30"
-              },
-              {
-                "OpeningTime": "17:30",
-                "ClosingTime": "18:30",
-                "IsClosed": true
-              }
-            ]
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Rodin Museum Shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labour Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" },
+            { "Date": "12-24", "Description": "Early closing on Christmas Eve",
+              "OpeningHours": [
+                { "OpeningTime": "10:00", "ClosingTime": "17:30" },
+                { "OpeningTime": "17:30", "ClosingTime": "18:30", "IsClosed": true }
+              ]
+            },
+            { "Date": "12-31", "Description": "Early closing on New Year's Eve",
+              "OpeningHours": [
+                { "OpeningTime": "10:00", "ClosingTime": "17:30" },
+                { "OpeningTime": "17:30", "ClosingTime": "18:30", "IsClosed": true }
+              ]
+            }
+          ] 
+        } 
       }
-    ]
+    ] 
   },
   {
     "MuseumId": 7,
@@ -673,71 +588,33 @@
     "Shop": [
       {
         "Name": "Petit Palais Museum Shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "10:00",
-            "ClosingTime": "20:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "10:00",
-            "ClosingTime": "20:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "07-14",
-            "IsClosed": true,
-            "Description": "Bastille Day"
-          },
-          {
-            "Date": "11-11",
-            "IsClosed": true,
-            "Description": "Armistice Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Petit Palais Museum Shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "20:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "20:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "07-14", "IsClosed": true, "Description": "Bastille Day" },
+            { "Date": "11-11", "IsClosed": true, "Description": "Armistice Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -773,61 +650,31 @@
     "Shop": [
       {
         "Name": "Grande Galerie de l’Évolution shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "10:00",
-            "ClosingTime": "18:00"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Grande Galerie de l’Évolution shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "10:00",  "ClosingTime": "18:00" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true,  "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -866,45 +713,31 @@
     "Shop": [
       {
         "Name": "Galerie de Paléontologie et d’Anatomie comparée shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00",
-            "IsFree": false
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "10:00",
-            "ClosingTime": "17:00"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeridos": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Galerie de Paléontologie et d’Anatomie comparée shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "17:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "17:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "IsFree": false, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "IsFree": false, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "IsFree": false, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -971,66 +804,32 @@
     "Shop": [
       {
         "Name": "Musée de l'Homme shop",
-        "OpeningHours": [
-          {
-            "DayOfWeek": 1,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          },
-          {
-            "DayOfWeek": 2,
-            "OpeningTime": null,
-            "ClosingTime": null,
-            "IsClosed": true
-          },
-          {
-            "DayOfWeek": 3,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          },
-          {
-            "DayOfWeek": 4,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          },
-          {
-            "DayOfWeek": 5,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          },
-          {
-            "DayOfWeek": 6,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          },
-          {
-            "DayOfWeek": 7,
-            "OpeningTime": "11:00",
-            "ClosingTime": "19:00"
-          }
-        ],
-        "ExceptionalDays": [
-          {
-            "Date": "01-01",
-            "IsClosed": true,
-            "Description": "New Year's Day"
-          },
-          {
-            "Date": "05-01",
-            "IsClosed": true,
-            "Description": "Labor Day"
-          },
-          {
-            "Date": "07-14",
-            "IsClosed": true,
-            "Description": "Bastille Day"
-          },
-          {
-            "Date": "12-25",
-            "IsClosed": true,
-            "Description": "Christmas Day"
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Musée de l'Homme shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": "11:00", "ClosingTime": "19:00" },
+                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 3, "OpeningTime": "11:00", "ClosingTime": "19:00" },
+                { "DayOfWeek": 4, "OpeningTime": "11:00", "ClosingTime": "19:00" },
+                { "DayOfWeek": 5, "OpeningTime": "11:00", "ClosingTime": "19:00" },
+                { "DayOfWeek": 6, "OpeningTime": "11:00", "ClosingTime": "19:00" },
+                { "DayOfWeek": 7, "OpeningTime": "11:00", "ClosingTime": "19:00" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "07-14", "IsClosed": true, "Description": "Bastille Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]
   },
@@ -1391,148 +1190,155 @@
     "Shop": [
       {
         "Name": "Librairie des Princes",
-        "OpeningPeriods": [
-          {
-            "Id": 1,
-            "StartDate": "11-01",
-            "EndDate": "03-31",
-            "Description": "Winter season for Librairie des Princes",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
-              { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
-            ]
-          },
-          {
-            "Id": 2,
-            "StartDate": "04-01",
-            "EndDate": "10-31",
-            "Description": "Summer season for Librairie des Princes",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "10:30", "ClosingTime": "18:15" },
-              { "DayOfWeek": 3, "OpeningTime": "10:30", "ClosingTime": "18:15" },
-              { "DayOfWeek": 4, "OpeningTime": "10:30", "ClosingTime": "18:15" },
-              { "DayOfWeek": 5, "OpeningTime": "10:30", "ClosingTime": "18:15" },
-              { "DayOfWeek": 6, "OpeningTime": "10:30", "ClosingTime": "18:15" },
-              { "DayOfWeek": 7, "OpeningTime": "10:30", "ClosingTime": "18:15" }
-            ]
-          }
-        ],
-        "ExceptionalDays": [
-          { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-          { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-          { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "11-01",
+              "EndDate": "03-31",
+              "Description": "Winter season for Librairie des Princes",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
+              ]
+            },
+            {
+              "Id": 2,
+              "StartDate": "04-01",
+              "EndDate": "10-31",
+              "Description": "Summer season for Librairie des Princes",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "10:30", "ClosingTime": "18:15" },
+                { "DayOfWeek": 3, "OpeningTime": "10:30", "ClosingTime": "18:15" },
+                { "DayOfWeek": 4, "OpeningTime": "10:30", "ClosingTime": "18:15" },
+                { "DayOfWeek": 5, "OpeningTime": "10:30", "ClosingTime": "18:15" },
+                { "DayOfWeek": 6, "OpeningTime": "10:30", "ClosingTime": "18:15" },
+                { "DayOfWeek": 7, "OpeningTime": "10:30", "ClosingTime": "18:15" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       },
       {
         "Name": "Boutique du Pavillon Dufour",
-        "OpeningPeriods": [
-          {
-            "Id": 1,
-            "StartDate": "11-01",
-            "EndDate": "03-31",
-            "Description": "Winter season for Boutique du Pavillon Dufour",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
-            ]
-          },
-          {
-            "Id": 2,
-            "StartDate": "04-01",
-            "EndDate": "10-31",
-            "Description": "Summer season for Boutique du Pavillon Dufour",
-            "OpeningHours": [
-               { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 5, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 6, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 7, "OpeningTime": "10:15", "ClosingTime": "18:00" }
-            ]
-          }
-        ],
-        "ExceptionalDays": [
-          { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-          { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-          { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "11-01",
+              "EndDate": "03-31",
+              "Description": "Winter season for Boutique du Pavillon Dufour",
+              "OpeningHours":  [
+                 { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
+              ]
+            },
+            {
+              "Id": 2,
+              "StartDate": "04-01",
+              "EndDate": "10-31",
+              "Description": "Summer season for Boutique du Pavillon Dufour",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:15", "ClosingTime": "18:00" }                 
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       },
       {
         "Name": "Boutique Cour de Marbre",
-        "OpeningPeriods": [
-          {
-            "Id": 1,
-            "StartDate": "11-01",
-            "EndDate": "03-31",
-            "Description": "Winter season for Boutique Cour de Marbre",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
-              { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
-            ]
-          },
-          {
-            "Id": 2,
-            "StartDate": "04-01",
-            "EndDate": "10-31",
-            "Description": "Summer season for Boutique Cour de Marbre",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 5, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 6, "OpeningTime": "10:15", "ClosingTime": "18:00" },
-              { "DayOfWeek": 7, "OpeningTime": "10:15", "ClosingTime": "18:00" }
-            ] 
-          }
-        ],
-        "ExceptionalDays": [
-          { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-          { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-          { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "11-01",
+              "EndDate": "03-31",
+              "Description": "Winter season for Boutique Cour de Marbre",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "17:15" },
+                { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "17:15" }
+              ]
+            },
+            {
+              "Id": 2,
+              "StartDate": "04-01",
+              "EndDate": "10-31",
+              "Description": "Summer season for Boutique Cour de Marbre",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 5, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 6, "OpeningTime": "10:15", "ClosingTime": "18:00" },
+                { "DayOfWeek": 7, "OpeningTime": "10:15", "ClosingTime": "18:00" }
+              ]
+            }
+          ]
+        } 
       },
       {
         "Name": "Comptoir de la Chapelle",
-        "OpeningPeriods": [
-          {
-            "Id": 1,
-            "StartDate": "01-01",
-            "EndDate": "12-31",
-            "Description": "Standard annual schedule for Comptoir de la Chapelle",
-            "OpeningHours": [
-              { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": true },
-              { "DayOfWeek": 2, "OpeningTime": "09:00", "ClosingTime": "16:45" },
-              { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "16:45" },
-              { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "16:45" },
-              { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "16:45" },
-              { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "16:45" },
-              { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "16:45" }
-            ]
-          }
-        ],
-        "ExceptionalDays": [
-          { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day" },
-          { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
-          { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Comptoir de la Chapelle",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 2, "OpeningTime": "09:00", "ClosingTime": "16:45" },
+                { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "16:45" },
+                { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "16:45" },
+                { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "16:45" },
+                { "DayOfWeek": 6, "OpeningTime": "09:00", "ClosingTime": "16:45" },
+                { "DayOfWeek": 7, "OpeningTime": "09:00", "ClosingTime": "16:45" }
+              ]
+            }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "Description": "New Year's Day"},
+            { "Date": "05-01", "IsClosed": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "Description": "Christmas Day" }
+          ]
+        }
       }
     ]  
   },
@@ -1637,32 +1443,44 @@
     "Shop": [
       {
         "Name": "Musée Carnavalet - Histoire de Paris shop",
-        "OpeningHours": [
-          { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
-            { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
-            { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": true },
-            { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
-            { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
-            { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true }
-        ],
-        "ExceptionalDays": [
-          { "Date": "01-01", "IsClosed": true, "IsFree": true, "Description": "New Year's Day" },
-          { "Date": "05-01", "IsClosed": true, "IsFree": true, "Description": "Labor Day" },
-          { "Date": "12-25", "IsClosed": true, "IsFree": true, "Description": "Christmas Day" },
-          { "Date": "12-24", "Description": "Early closing on Christmas Eve",
-            "OpeningHours": [
-              { "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": true, "LastEntryOffset": "-00:45" },
-              { "OpeningTime": "17:00", "ClosingTime": "18:00", "IsFree": true, "IsClosed": true }
-            ]
-          },
-          { "Date": "12-31", "Description": "Early closing on New Year's Eve","LastEntryOffset": "-00:45",
-            "OpeningHours": [
-              { "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": true },
-              { "OpeningTime": "17:00", "ClosingTime": "18:30", "IsFree": true, "IsClosed": true }
-            ]
-          }
-        ]
+        "TimeTable": {
+          "Year": 2025,
+          "OpeningPeriods": [
+            {
+              "Id": 1,
+              "StartDate": "01-01",
+              "EndDate": "12-31",
+              "Description": "Standard annual schedule for Musée Carnavalet - Histoire de Paris shop",
+              "OpeningHours": [
+                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false },
+                { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
+                { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
+                { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": true },
+                { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
+                { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
+                { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true }
+              ]
+              }
+          ],
+          "ExceptionalDays": [
+            { "Date": "01-01", "IsClosed": true, "IsFree": true, "Description": "New Year's Day" },
+            { "Date": "05-01", "IsClosed": true, "IsFree": true, "Description": "Labor Day" },
+            { "Date": "12-25", "IsClosed": true, "IsFree": true, "Description": "Christmas Day" },
+            { "Date": "12-24", "Description": "Early closing on Christmas Eve",
+              "OpeningHours": [
+                { "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": true, "LastEntryOffset": "-00:45" },
+                { "OpeningTime": "17:00", "ClosingTime": "18:00", "IsFree": true, "IsClosed": true }
+              ]
+            },
+            { "Date": "12-31", "Description": "Early closing on New Year's Eve",
+              "LastEntryOffset": "-00:45",
+              "OpeningHours": [
+                { "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": true },
+                { "OpeningTime": "17:00", "ClosingTime": "18:30", "IsFree": true, "IsClosed": true }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -1675,7 +1493,7 @@
           "Id": 1,
           "StartDate": "01-01",
           "EndDate": "12-31",
-          "Description": "Standard annual schedule for  Maiosn de Balzac",
+          "Description": "Standard annual schedule for Maison de Balzac",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },

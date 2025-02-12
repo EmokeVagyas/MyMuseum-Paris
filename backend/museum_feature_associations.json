@@ -1,86 +1,86 @@
 ﻿[
   {
     "MuseumId": 1,
-    "MuseumFeatureOptionId": [ 1, 6, 7, 9, 21, 22, 24 ]
+    "MuseumFeatureOptionIds": [ 1, 6, 7, 9, 21, 22, 24 ]
   },
   {
     "MuseumId": 2,
-    "MuseumFeatureOptionId": [ 1, 2 ]
+    "MuseumFeatureOptionIds": [ 1, 2 ]
   },
   {
     "MuseumId": 3,
-    "MuseumFeatureOptionId": [ 2, 3 ]
+    "MuseumFeatureOptionIds": [ 2, 3 ]
   },
   {
     "MuseumId": 4,
-    "MuseumFeatureOptionId": [ 6, 7, 8, 9, 21, 22, 24 ]
+    "MuseumFeatureOptionIds": [ 6, 7, 8, 9, 21, 22, 24 ]
   },
   {
     "MuseumId": 5,
-    "MuseumFeatureOptionId": [ 3, 4 ]
+    "MuseumFeatureOptionIds": [ 3, 4 ]
   },
   {
     "MuseumId": 6,
-    "MuseumFeatureOptionId": [ 3, 4 ]
+    "MuseumFeatureOptionIds": [ 3, 4 ]
   },
   {
     "MuseumId": 7,
-    "MuseumFeatureOptionId": [ 1, 3 ]
+    "MuseumFeatureOptionIds": [ 1, 3 ]
   },
   {
     "MuseumId": 8,
-    "MuseumFeatureOptionId": [ 12, 15, 16, 17, 20 ]
+    "MuseumFeatureOptionIds": [ 12, 15, 16, 17, 20 ]
   },
   {
     "MuseumId": 9,
-    "MuseumFeatureOptionId": [ 12, 14, 15, 16, 19 ]
+    "MuseumFeatureOptionIds": [ 12, 14, 15, 16, 19 ]
   },
   {
     "MuseumId": 10,
-    "MuseumFeatureOptionId": [ 14, 19 ]
+    "MuseumFeatureOptionIds": [ 14, 19 ]
   },
   {
     "MuseumId": 11,
-    "MuseumFeatureOptionId": [ 16, 22, 23, 24 ]
+    "MuseumFeatureOptionIds": [ 16, 22, 23, 24 ]
   },
   {
     "MuseumId": 12,
-    "MuseumFeatureOptionId": 20
+    "MuseumFeatureOptionIds": [ 20 ]
   },
   {
     "MuseumId": 13,
-    "MuseumFeatureOptionId": 18
+    "MuseumFeatureOptionIds": [ 18 ]
   },
   {
     "MuseumId": 14,
-    "MuseumFeatureOptionId": 20
+    "MuseumFeatureOptionIds": [ 20 ]
   },
   {
     "MuseumId": 15,
-    "MuseumFeatureOptionId": 18
+    "MuseumFeatureOptionIds": [ 18 ]
   },
   {
     "MuseumId": 16,
-    "MuseumFeatureOprionId": 18
+    "MuseumFeatureOprionId": [ 18 ]
   },
   {
     "MuseumId": 17,
-    "MuseumFeatureOptionid": [ 1, 9 ]
+    "MuseumFeatureOptionIds": [ 1, 9 ]
   },
   {
     "MuseumId": 18,
-    "MuseumFeatureOptionId": [ 3, 4 ]
+    "MuseumFeatureOptionIds": [ 3, 4 ]
   },
   {
     "MuseumId": 19,
-    "MuseumFeatureOptionId": 4
+    "MuseumFeatureOptionIds": [ 4 ]
   },
   {
     "MuseumId": 20,
-    "MuseumFeatureOptionId": 9
+    "MuseumFeatureOptionIds": [ 9 ]
   },
   {
     "MuseumId": 21,
-    "MuseumFeatureOptionId": 9
+    "MuseumFeatureOptionIds": [ 9 ]
   }
 ]

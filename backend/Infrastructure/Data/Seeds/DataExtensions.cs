@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Backend.Domain.Entities;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using System.Linq;
-using System;
-using System.Runtime.CompilerServices;
 using Backend.Application.DTOs;
 using AutoMapper;
 
@@ -25,19 +19,36 @@ namespace Backend.Infrastructure.Data.Seeds
                 return app;
             }
 
-            var museumsDto = LoadFromJson<List<MuseumDto>>("museums-old.json");
-            var museums = mapper.Map<List<Museum>>(museumsDto);
-
+            
             var countryDtos = LoadFromJson<List<CountryDto>>("countries.json");
             var countries = mapper.Map<List<Country>>(countryDtos);
-
             context.Countries.AddRange(countries);
+            context.SaveChanges();
+
+            var museumsDto = LoadFromJson<List<MuseumDto>>("museums-old.json");
+            var museums = mapper.Map<List<Museum>>(museumsDto);
+            context.Museums.AddRange(museums);
+            context.SaveChanges();
+
+            var museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
+            //var museumSchedules = mapper.Map<List<MuseumSchedule>>(museumScheduleDtos);
+            //context.MuseumSchedules.AddRange(museumSchedules);
             //context.SaveChanges();
 
-            var museumSchedules = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
+            museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
+            var shops = new List<Shop>();
+            foreach (var dto in museumScheduleDtos)
+            {
+                if (dto == null || dto.Shop == null)
+                {
+                    continue;
+                }
 
-            //context.Museums.AddRange(museums);
-            //context.SaveChanges();
+                var res = mapper.Map<List<Shop>>(dto);
+                shops.AddRange(res);
+            }
+            context.Shops.AddRange(shops);
+            context.SaveChanges();
 
             var features = new List<MuseumFeature>
             {
@@ -50,11 +61,11 @@ namespace Backend.Infrastructure.Data.Seeds
             };
 
             context.MuseumFeatures.AddRange(features);
-            //context.SaveChanges();
+            context.SaveChanges();
 
             AddMuseumFeatureOptions(context);
 
-            AddMuseumFeatureAssociations(context);
+            AddMuseumFeatureAssociations(mapper, context);
 
             return app;
         }
@@ -107,17 +118,24 @@ namespace Backend.Infrastructure.Data.Seeds
             };
 
             context.MuseumFeatureOptions.AddRange(artOptions.Concat(historyOptions).Concat(scienceOptions).Concat(naturalHistoryOptions).Concat(cultureOptions));
-            //context.SaveChanges();
+            context.SaveChanges();
         }
 
-        private static void AddMuseumFeatureAssociations(AppDbContext context)
+        private static void AddMuseumFeatureAssociations(IMapper mapper, AppDbContext context)
         {
             if (context.MuseumFeatureAssociations.Any()) return;
 
-            var museumFeatureAssociations = LoadFromJson<List<MuseumFeatureAssociation>>("museum_feature_associations.json");
+            var museumFeatureAssociationDtos = LoadFromJson<List<MuseumFeatureAssociationDto>>("museum_feature_associations.json");
+            var museumFeatureAssociations = new List<MuseumFeatureAssociation>();
+            
+            foreach (var dto in museumFeatureAssociationDtos)
+            {
+                var res = mapper.Map<List<MuseumFeatureAssociation>>(dto);
+                museumFeatureAssociations.AddRange(res);
+            }
 
             context.MuseumFeatureAssociations.AddRange(museumFeatureAssociations);
-            //context.SaveChanges();
+            context.SaveChanges();
         }
 
         private static T LoadFromJson<T>(string jsonPath) where T : class

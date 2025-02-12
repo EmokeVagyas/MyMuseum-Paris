@@ -8,12 +8,12 @@ namespace Backend.Domain.Entities
         [Key]
         public int MuseumId { get; set; }
 
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public string Description { get; set; }
+        public required string Name { get; set; }
+        public required string Location { get; set; }
+        public required string Description { get; set; }
         public MuseumEnvironment Environment { get; set; }
-        public List<MuseumAccessibility> Accessibilities { get; set; }
-        public List<MuseumLanguage> Languages { get; set; }
+        public required List<MuseumAccessibility> Accessibilities { get; set; }
+        public required List<MuseumLanguage> Languages { get; set; }
         public bool GuidedTours { get; set; }
         public bool AudioGuide { get; set; }
 
@@ -22,7 +22,7 @@ namespace Backend.Domain.Entities
 
         public List<MuseumSchedule> Schedules { get; set; } = [];
         public List<MuseumFeatureAssociation> FeatureAssociations { get; set; } = [];
-        public List<Shop> Shops { get; set; }
+        public List<Shop> Shops { get; set; } = [];
     }
 }
 

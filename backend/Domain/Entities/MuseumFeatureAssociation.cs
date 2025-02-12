@@ -9,10 +9,10 @@ namespace Backend.Domain.Entities
     {
         public int MuseumId { get; set; }
         [ForeignKey("MuseumId")]
-        public required Museum Museum { get; set; }
+        public Museum Museum { get; set; }
 
         public int MuseumFeatureOptionId { get; set; }
         [ForeignKey("MuseumFeatureOptionId")]
-        public required MuseumFeatureOption MuseumFeatureOption { get; set; }
+        public MuseumFeatureOption? MuseumFeatureOption { get; set; }
     }
 }

@@ -3,11 +3,11 @@ using System.Globalization;
 
 namespace Backend.Domain.Entities
 {
-    public class MonthDayJsonConverter : JsonConverter<DateOnly>
+    public class MonthDayJsonConverter : JsonConverter<DateOnly?>
     {
         private const string DateFormat = "MM-dd";
 
-        public override DateOnly ReadJson(JsonReader reader, Type objectType, DateOnly existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override DateOnly? ReadJson(JsonReader reader, Type objectType, DateOnly? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             string? dateString = reader.Value?.ToString();
             // Should we check if the destination field type is nullable?
@@ -27,9 +27,9 @@ namespace Backend.Domain.Entities
             return DateOnly.ParseExact(dateString, DateFormat);
         }
 
-        public override void WriteJson(JsonWriter writer, DateOnly value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, DateOnly? value, JsonSerializer serializer)
         {
-            writer.WriteValue(value.ToString(DateFormat));
+            writer.WriteValue(value?.ToString(DateFormat));
         }
     }
 

@@ -10,8 +10,8 @@ namespace Backend.Application.DTOs
         public string Location { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public MuseumEnvironment Environment { get; set; }
-        public List<Accessibility> Accessibilities { get; set; }
-        public List<Language> Languages { get; set; }
+        public required List<Accessibility> Accessibilities { get; set; }
+        public required List<Language> Languages { get; set; }
         public bool GuidedTours { get; set; }
         public bool AudioGuide { get; set; }
 

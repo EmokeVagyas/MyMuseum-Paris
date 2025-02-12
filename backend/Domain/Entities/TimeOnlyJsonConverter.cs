@@ -3,11 +3,11 @@ using System;
 
 namespace Backend.Domain.Entities
 {
-    public class TimeDayJsonConverter : JsonConverter<TimeOnly>
+    public class TimeDayJsonConverter : JsonConverter<TimeOnly?>
     {
         private const string TimeFormat = "HH:mm";
 
-        public override TimeOnly ReadJson(JsonReader reader, Type objectType, TimeOnly existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override TimeOnly? ReadJson(JsonReader reader, Type objectType, TimeOnly? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var value = reader.Value?.ToString();
 
@@ -24,9 +24,9 @@ namespace Backend.Domain.Entities
             return TimeOnly.ParseExact(value, TimeFormat);
         }
 
-        public override void WriteJson(JsonWriter writer, TimeOnly value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, TimeOnly? value, JsonSerializer serializer)
         {
-            writer.WriteValue(value.ToString(TimeFormat));
+            writer.WriteValue(value?.ToString(TimeFormat));
         }
     }
 
