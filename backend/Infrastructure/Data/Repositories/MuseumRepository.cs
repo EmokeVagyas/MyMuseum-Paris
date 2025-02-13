@@ -35,6 +35,10 @@ namespace Backend.Infrastructure.Data.Repositories
         public async Task<Museum?> GetMuseum(int museumId)
         {
             return await _context.Museums
+                .Include(m => m.Accessibilities)
+                .Include(m => m.Languages)
+                .Include(m => m.Schedules)
+                .Include(m => m.FeatureAssociations)
                 .Include(ms => ms.Shops)
                 .FirstOrDefaultAsync(m => m.MuseumId == museumId);
         }

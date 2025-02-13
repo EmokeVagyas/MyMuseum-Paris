@@ -6,6 +6,7 @@ using Backend.Infrastructure.Repositories;
 using Backend.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Backend.Infrastructure.Data.Seeds;
+using Backend.Infrastructure.Data.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,10 +32,14 @@ builder.Services.AddAutoMapper(
     typeof(MuseumScheduleMapperProfile)
 );
 
-builder.Services.AddSingleton<IMuseumService, MuseumService>();
+// Repositories
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IMuseumRepository, MuseumRepository>();
+
+// Services
+builder.Services.AddScoped<IMuseumService, MuseumService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ICityService, CityService>();
-builder.Services.AddScoped<ICityRepository, CityRepository>();
 
 var app = builder.Build();
 

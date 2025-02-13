@@ -2,35 +2,23 @@
 using System.Text.Json;
 using Backend.Application.DTOs;
 using Backend.Application.Interfaces;
+using Backend.Domain.Interfaces;
 
 namespace Backend.Application.Services
 {
-    public class MuseumService : IMuseumService
+    public class MuseumService(
+        IMuseumRepository _museumRepo    
+    ) : IMuseumService
     {
-        private readonly List<Museum> _museums;
 
-        public MuseumService()
+        public async Task<Museum?> GetMuseumById(int id)
         {
-            var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "museums.json");
-            if (File.Exists(jsonPath))
-            {
-                var jsonData = File.ReadAllText(jsonPath);
-                _museums = JsonSerializer.Deserialize<List<Museum>>(jsonData) ?? new List<Museum>();
-            }
-            else
-            {
-                _museums = new List<Museum>();
-            }
+            return await _museumRepo.GetMuseum(id);
         }
 
-        public Museum? GetMuseumById(int id)
+        public async Task<IEnumerable<Museum>> GetAllMuseums()
         {
-            return _museums.FirstOrDefault(m => m.MuseumId == id);
-        }
-
-        public List<Museum> GetAllMuseums()
-        {
-            return _museums;
+            return await _museumRepo.GetAllMuseums();
         }
     }
 }

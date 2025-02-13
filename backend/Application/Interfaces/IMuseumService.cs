@@ -4,7 +4,7 @@ namespace Backend.Application.Interfaces
 {
     public interface IMuseumService
     {
-        Museum? GetMuseumById(int id);
-        List<Museum> GetAllMuseums();
+        Task<Museum?> GetMuseumById(int id);
+        Task<IEnumerable<Museum>> GetAllMuseums();
     }
 }
