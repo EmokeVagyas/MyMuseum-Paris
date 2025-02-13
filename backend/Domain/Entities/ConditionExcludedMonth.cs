@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
+    [Table("condition_excluded_months")]
     public class ConditionExcludedMonth
     {
         [Key]

@@ -72,7 +72,7 @@ namespace Backend.Infrastructure.Data.Seeds
 
             var museumScheduleDtos = LoadFromJson<List<MuseumScheduleDto>>("museumSchedule.json");
             var museumSchedules = mapper.Map<List<MuseumSchedule>>(museumScheduleDtos);
-
+            
             context.MuseumSchedules.AddRange(museumSchedules);
             context.SaveChanges();
         }

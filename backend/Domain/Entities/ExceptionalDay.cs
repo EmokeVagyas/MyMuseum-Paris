@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 namespace Backend.Domain.Entities
 {
+    [Table("exceptional_days")]
     public class ExceptionalDay
     {
         [Key]

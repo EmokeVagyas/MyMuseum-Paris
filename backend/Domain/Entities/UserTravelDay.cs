@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
+    [Table("user_travel_days")]
     public class UserTravelDay
     {
         // I don't think this entity is correct. Let's rethink ti once more before using please.

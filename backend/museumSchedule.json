@@ -706,9 +706,6 @@
         { "Date": "01-01", "IsClosed": true, "IsFree": false, "Description": "New Year's Day" },
         { "Date": "05-01", "IsClosed": true, "IsFree": false, "Description": "Labor Day" },
         { "Date": "12-25", "IsClosed": true, "IsFree": false, "Description": "Christmas Day" }
-      ],
-      "SpecialRules": [
-        { "RuleType": "ExtremeHeatClosing", "Description": "In case of extreme heat, the Gallery may be partially or completely closed to the public."}
       ]
     },
     "Shop": [
@@ -1009,9 +1006,6 @@
           ],
           "LastEntryOffset": "-00:15"
         }
-      ],
-      "SpecialRules": [
-        { "RuleType": "ExtremeHeatClosing", "Description": "In case of extreme heat, the Gallery may be partially or completely closed to the public."}
       ]
     }
   },
@@ -1068,9 +1062,6 @@
         { "Date": "01-01", "IsClosed": true, "IsFree": false, "Description": "New Year's Day" },
         { "Date": "05-01", "IsClosed": true, "IsFree": false, "Description": "Labor Day" },
         { "Date": "12-25", "IsClosed": true, "IsFree": false, "Description": "Christmas Day" }
-      ],
-      "SpecialRules": [
-        { "RuleType": "ExtremeHeatClosing", "Description": "In the event of bad weather and extreme heat, the Grandes Serres may be partially or completely closed to the public."  }
       ]
     }
   },

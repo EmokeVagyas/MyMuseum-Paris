@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250212233412_InitialCreation")]
+    [Migration("20250213001943_InitialCreation")]
     partial class InitialCreation
     {
         /// <inheritdoc />
@@ -29,424 +29,523 @@ namespace Backend.Migrations
                 {
                     b.Property<int>("CityId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("city_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CityId"));
 
                     b.Property<int>("CountryId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("country_id");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("name");
 
-                    b.HasKey("CityId");
+                    b.HasKey("CityId")
+                        .HasName("pk_cities");
 
-                    b.HasIndex("CountryId");
+                    b.HasIndex("CountryId")
+                        .HasDatabaseName("ix_cities_country_id");
 
-                    b.ToTable("Cities");
+                    b.ToTable("cities", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Condition", b =>
                 {
                     b.Property<int>("ConditionId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("condition_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ConditionId"));
 
                     b.Property<int>("DayOfWeek")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("day_of_week");
 
                     b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time without time zone")
+                        .HasColumnName("end_time");
 
                     b.Property<bool>("IsFree")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_free");
 
                     b.Property<TimeOnly>("StartTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time without time zone")
+                        .HasColumnName("start_time");
 
                     b.Property<int>("WeekOfMonth")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("week_of_month");
 
-                    b.HasKey("ConditionId");
+                    b.HasKey("ConditionId")
+                        .HasName("pk_conditions");
 
-                    b.ToTable("Conditions");
+                    b.ToTable("conditions", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ConditionExcludedMonth", b =>
                 {
                     b.Property<int>("ConditionId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("condition_id");
 
                     b.Property<int>("ExcludedMonth")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("excluded_month");
 
-                    b.HasKey("ConditionId", "ExcludedMonth");
+                    b.HasKey("ConditionId", "ExcludedMonth")
+                        .HasName("pk_condition_excluded_months");
 
-                    b.ToTable("ConditionExcludedMonths");
+                    b.ToTable("condition_excluded_months", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Country", b =>
                 {
                     b.Property<int>("CountryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("country_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CountryId"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("name");
 
-                    b.HasKey("CountryId");
+                    b.HasKey("CountryId")
+                        .HasName("pk_countries");
 
-                    b.ToTable("Countries");
+                    b.ToTable("countries", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ExceptionalDay", b =>
                 {
                     b.Property<int>("ExceptionalDayId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("exceptional_day_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ExceptionalDayId"));
 
                     b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
+                        .HasColumnType("date")
+                        .HasColumnName("date");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("description");
 
                     b.Property<bool?>("IsClosed")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_closed");
 
                     b.Property<bool?>("IsFree")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_free");
 
                     b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
-                    b.HasKey("ExceptionalDayId");
+                    b.HasKey("ExceptionalDayId")
+                        .HasName("pk_exceptional_days");
 
-                    b.HasIndex("ScheduleId");
+                    b.HasIndex("ScheduleId")
+                        .HasDatabaseName("ix_exceptional_days_schedule_id");
 
-                    b.ToTable("ExceptionalDays");
+                    b.ToTable("exceptional_days", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Museum", b =>
                 {
                     b.Property<int>("MuseumId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MuseumId"));
 
                     b.Property<bool>("AudioGuide")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("audio_guide");
 
                     b.Property<int>("CityId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("city_id");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("description");
 
                     b.Property<int>("Environment")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("environment");
 
                     b.Property<bool>("GuidedTours")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("guided_tours");
 
                     b.Property<string>("Location")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("location");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("name");
 
-                    b.HasKey("MuseumId");
+                    b.HasKey("MuseumId")
+                        .HasName("pk_museums");
 
-                    b.HasIndex("CityId");
+                    b.HasIndex("CityId")
+                        .HasDatabaseName("ix_museums_city_id");
 
-                    b.ToTable("Museums");
+                    b.ToTable("museums", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumAccessibility", b =>
                 {
                     b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     b.Property<int>("Accessibility")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("accessibility");
 
-                    b.HasKey("MuseumId", "Accessibility");
+                    b.HasKey("MuseumId", "Accessibility")
+                        .HasName("pk_museum_accessibilities");
 
-                    b.ToTable("MuseumAccessibilities");
+                    b.ToTable("museum_accessibilities", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FeatureType")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("feature_type");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_museum_features");
 
-                    b.ToTable("MuseumFeatures");
+                    b.ToTable("museum_features", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeatureAssociation", b =>
                 {
                     b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     b.Property<int>("MuseumFeatureOptionId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_feature_option_id");
 
-                    b.HasKey("MuseumId", "MuseumFeatureOptionId");
+                    b.HasKey("MuseumId", "MuseumFeatureOptionId")
+                        .HasName("pk_museum_feature_associations");
 
-                    b.HasIndex("MuseumFeatureOptionId");
+                    b.HasIndex("MuseumFeatureOptionId")
+                        .HasDatabaseName("ix_museum_feature_associations_museum_feature_option_id");
 
-                    b.ToTable("MuseumFeatureAssociations");
+                    b.ToTable("museum_feature_associations", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumFeatureOption", b =>
                 {
                     b.Property<int>("MuseumFeatureOptionId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_feature_option_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MuseumFeatureOptionId"));
 
                     b.Property<int>("MuseumFeatureId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_feature_id");
 
                     b.Property<string>("OptionName")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("option_name");
 
-                    b.HasKey("MuseumFeatureOptionId");
+                    b.HasKey("MuseumFeatureOptionId")
+                        .HasName("pk_museum_feature_options");
 
-                    b.HasIndex("MuseumFeatureId");
+                    b.HasIndex("MuseumFeatureId")
+                        .HasDatabaseName("ix_museum_feature_options_museum_feature_id");
 
-                    b.ToTable("MuseumFeatureOptions");
+                    b.ToTable("museum_feature_options", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumLanguage", b =>
                 {
                     b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     b.Property<int>("Language")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("language");
 
-                    b.HasKey("MuseumId", "Language");
+                    b.HasKey("MuseumId", "Language")
+                        .HasName("pk_museum_languages");
 
-                    b.ToTable("MuseumLanguages");
+                    b.ToTable("museum_languages", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.MuseumSchedule", b =>
                 {
                     b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
-                    b.HasKey("MuseumId", "ScheduleId");
+                    b.HasKey("MuseumId", "ScheduleId")
+                        .HasName("pk_museum_schedules");
 
-                    b.HasIndex("ScheduleId");
+                    b.HasIndex("ScheduleId")
+                        .HasDatabaseName("ix_museum_schedules_schedule_id");
 
-                    b.ToTable("MuseumSchedules");
+                    b.ToTable("museum_schedules", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.OpeningHour", b =>
                 {
                     b.Property<int>("OpeningHourId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("opening_hour_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OpeningHourId"));
 
                     b.Property<TimeOnly?>("ClosingTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time without time zone")
+                        .HasColumnName("closing_time");
 
                     b.Property<int>("DayOfWeek")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("day_of_week");
 
                     b.Property<int?>("ExceptionalDayId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("exceptional_day_id");
 
                     b.Property<bool>("IsClosed")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_closed");
 
                     b.Property<bool>("IsFree")
-                        .HasColumnType("boolean");
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_free");
 
                     b.Property<int?>("OpeningPeriodId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("opening_period_id");
 
                     b.Property<TimeOnly?>("OpeningTime")
-                        .HasColumnType("time without time zone");
+                        .HasColumnType("time without time zone")
+                        .HasColumnName("opening_time");
 
-                    b.Property<int?>("ShopId")
-                        .HasColumnType("integer");
+                    b.HasKey("OpeningHourId")
+                        .HasName("pk_opening_hours");
 
-                    b.HasKey("OpeningHourId");
+                    b.HasIndex("ExceptionalDayId")
+                        .HasDatabaseName("ix_opening_hours_exceptional_day_id");
 
-                    b.HasIndex("ExceptionalDayId");
+                    b.HasIndex("OpeningPeriodId")
+                        .HasDatabaseName("ix_opening_hours_opening_period_id");
 
-                    b.HasIndex("OpeningPeriodId");
-
-                    b.ToTable("OpeningHours");
+                    b.ToTable("opening_hours", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.OpeningPeriod", b =>
                 {
                     b.Property<int>("OpeningPeriodId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("opening_period_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OpeningPeriodId"));
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("description");
 
                     b.Property<DateOnly>("EndDate")
-                        .HasColumnType("date");
+                        .HasColumnType("date")
+                        .HasColumnName("end_date");
 
                     b.Property<TimeSpan?>("LastEntryOffset")
-                        .HasColumnType("interval");
+                        .HasColumnType("interval")
+                        .HasColumnName("last_entry_offset");
 
                     b.Property<TimeSpan?>("RoomClearingOffset")
-                        .HasColumnType("interval");
+                        .HasColumnType("interval")
+                        .HasColumnName("room_clearing_offset");
 
                     b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
                     b.Property<DateOnly>("StartDate")
-                        .HasColumnType("date");
+                        .HasColumnType("date")
+                        .HasColumnName("start_date");
 
-                    b.HasKey("OpeningPeriodId");
+                    b.HasKey("OpeningPeriodId")
+                        .HasName("pk_opening_periods");
 
-                    b.HasIndex("ScheduleId");
+                    b.HasIndex("ScheduleId")
+                        .HasDatabaseName("ix_opening_periods_schedule_id");
 
-                    b.ToTable("OpeningPeriods");
+                    b.ToTable("opening_periods", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Schedule", b =>
                 {
                     b.Property<int>("ScheduleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ScheduleId"));
 
                     b.Property<int>("Year")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("year");
 
-                    b.HasKey("ScheduleId");
+                    b.HasKey("ScheduleId")
+                        .HasName("pk_schedules");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("schedules", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.Shop", b =>
                 {
                     b.Property<int>("ShopId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("shop_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ShopId"));
 
                     b.Property<int>("MuseumId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("museum_id");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("name");
 
-                    b.HasKey("ShopId");
+                    b.HasKey("ShopId")
+                        .HasName("pk_shops");
 
-                    b.HasIndex("MuseumId");
+                    b.HasIndex("MuseumId")
+                        .HasDatabaseName("ix_shops_museum_id");
 
-                    b.ToTable("Shops");
+                    b.ToTable("shops", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.ShopSchedule", b =>
                 {
                     b.Property<int>("ShopId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("shop_id");
 
                     b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
-                    b.HasKey("ShopId", "ScheduleId");
+                    b.HasKey("ShopId", "ScheduleId")
+                        .HasName("pk_shop_schedules");
 
-                    b.HasIndex("ScheduleId");
+                    b.HasIndex("ScheduleId")
+                        .HasDatabaseName("ix_shop_schedules_schedule_id");
 
-                    b.ToTable("ShopSchedules");
+                    b.ToTable("shop_schedules", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.SpecialRule", b =>
                 {
                     b.Property<int>("SpecialRuleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("special_rule_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SpecialRuleId"));
 
                     b.Property<int>("ConditionId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("condition_id");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("description");
 
                     b.Property<string>("RuleType")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("rule_type");
 
                     b.Property<int>("ScheduleId")
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("schedule_id");
 
-                    b.HasKey("SpecialRuleId");
+                    b.HasKey("SpecialRuleId")
+                        .HasName("pk_special_rules");
 
                     b.HasIndex("ConditionId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("ix_special_rules_condition_id");
 
-                    b.HasIndex("ScheduleId");
+                    b.HasIndex("ScheduleId")
+                        .HasDatabaseName("ix_special_rules_schedule_id");
 
-                    b.ToTable("SpecialRules");
+                    b.ToTable("special_rules", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.User", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("user_id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserID"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("email");
 
-                    b.HasKey("UserID");
+                    b.HasKey("UserID")
+                        .HasName("pk_users");
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("Backend.Domain.Entities.City", b =>
@@ -455,7 +554,8 @@ namespace Backend.Migrations
                         .WithMany("Cities")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_cities_countries_country_id");
 
                     b.Navigation("Country");
                 });
@@ -466,7 +566,8 @@ namespace Backend.Migrations
                         .WithMany("ExcludedMonths")
                         .HasForeignKey("ConditionId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_condition_excluded_months_conditions_condition_id");
 
                     b.Navigation("Condition");
                 });
@@ -477,7 +578,8 @@ namespace Backend.Migrations
                         .WithMany("ExceptionalDays")
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_exceptional_days_schedules_schedule_id");
 
                     b.Navigation("Schedule");
                 });
@@ -488,7 +590,8 @@ namespace Backend.Migrations
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museums_cities_city_id");
 
                     b.Navigation("City");
                 });
@@ -499,7 +602,8 @@ namespace Backend.Migrations
                         .WithMany("Accessibilities")
                         .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_accessibilities_museums_museum_id");
 
                     b.Navigation("Museum");
                 });
@@ -510,13 +614,15 @@ namespace Backend.Migrations
                         .WithMany()
                         .HasForeignKey("MuseumFeatureOptionId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_feature_associations_museum_feature_options_museum_f");
 
                     b.HasOne("Backend.Domain.Entities.Museum", "Museum")
                         .WithMany("FeatureAssociations")
                         .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_feature_associations_museums_museum_id");
 
                     b.Navigation("Museum");
 
@@ -529,7 +635,8 @@ namespace Backend.Migrations
                         .WithMany("MuseumFeatureOptions")
                         .HasForeignKey("MuseumFeatureId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_feature_options_museum_features_museum_feature_id");
 
                     b.Navigation("MuseumFeature");
                 });
@@ -540,7 +647,8 @@ namespace Backend.Migrations
                         .WithMany("Languages")
                         .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_languages_museums_museum_id");
 
                     b.Navigation("Museum");
                 });
@@ -551,13 +659,15 @@ namespace Backend.Migrations
                         .WithMany("Schedules")
                         .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_schedules_museums_museum_id");
 
                     b.HasOne("Backend.Domain.Entities.Schedule", "Schedule")
                         .WithMany()
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_museum_schedules_schedules_schedule_id");
 
                     b.Navigation("Museum");
 
@@ -569,11 +679,13 @@ namespace Backend.Migrations
                     b.HasOne("Backend.Domain.Entities.ExceptionalDay", "ExceptionalDay")
                         .WithMany("OpeningHours")
                         .HasForeignKey("ExceptionalDayId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("fk_opening_hours_exceptional_days_exceptional_day_id");
 
                     b.HasOne("Backend.Domain.Entities.OpeningPeriod", null)
                         .WithMany("OpeningHours")
-                        .HasForeignKey("OpeningPeriodId");
+                        .HasForeignKey("OpeningPeriodId")
+                        .HasConstraintName("fk_opening_hours_opening_periods_opening_period_id");
 
                     b.Navigation("ExceptionalDay");
                 });
@@ -584,7 +696,8 @@ namespace Backend.Migrations
                         .WithMany("OpeningPeriods")
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_opening_periods_schedules_schedule_id");
 
                     b.Navigation("Schedule");
                 });
@@ -595,7 +708,8 @@ namespace Backend.Migrations
                         .WithMany("Shops")
                         .HasForeignKey("MuseumId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_shops_museums_museum_id");
 
                     b.Navigation("Museum");
                 });
@@ -606,13 +720,15 @@ namespace Backend.Migrations
                         .WithMany()
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_shop_schedules_schedules_schedule_id");
 
                     b.HasOne("Backend.Domain.Entities.Shop", "Shop")
                         .WithMany("ShopSchedules")
                         .HasForeignKey("ShopId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_shop_schedules_shops_shop_id");
 
                     b.Navigation("Schedule");
 
@@ -625,13 +741,15 @@ namespace Backend.Migrations
                         .WithOne("SpecialRule")
                         .HasForeignKey("Backend.Domain.Entities.SpecialRule", "ConditionId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_special_rules_conditions_condition_id");
 
                     b.HasOne("Backend.Domain.Entities.Schedule", "Schedule")
                         .WithMany("SpecialRules")
                         .HasForeignKey("ScheduleId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_special_rules_schedules_schedule_id");
 
                     b.Navigation("Condition");
 

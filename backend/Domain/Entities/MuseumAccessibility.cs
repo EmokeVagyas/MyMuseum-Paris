@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
+    [Table("museum_accessibilities")]
     public class MuseumAccessibility
     {
         [Key]

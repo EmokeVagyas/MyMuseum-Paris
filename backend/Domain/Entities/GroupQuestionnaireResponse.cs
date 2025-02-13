@@ -1,5 +1,8 @@
-﻿namespace Backend.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Backend.Domain.Entities
 {
+    [Table("group_questionnaire_responses")]
     public class GroupQuestionnaireResponse
     {
         public int Id { get; set; }

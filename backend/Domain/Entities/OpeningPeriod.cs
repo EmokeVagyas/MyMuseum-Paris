@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 
 namespace Backend.Domain.Entities
 {
+    [Table("opening_periods")]
     public class OpeningPeriod
     {
         [Key]

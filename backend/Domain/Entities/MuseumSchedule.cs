@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
+    [Table("museum_schedules")]
     public class MuseumSchedule
     {
         [Key]

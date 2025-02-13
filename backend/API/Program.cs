@@ -19,6 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("PostgresConnection")
     )
+    .UseSnakeCaseNamingConvention()
     .EnableSensitiveDataLogging()
     .LogTo(Console.WriteLine, LogLevel.Information)
 );
