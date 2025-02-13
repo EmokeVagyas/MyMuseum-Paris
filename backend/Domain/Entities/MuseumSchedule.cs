@@ -1,33 +1,19 @@
-﻿using Newtonsoft.Json;
-using System.Net.Http.Json;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
+    [Table("museum_schedules")]
     public class MuseumSchedule
     {
+        [Key]
         public int MuseumId { get; set; }
+        [ForeignKey("MuseumId")]
+        public Museum Museum { get; set; } = null!;
 
-        [JsonConverter(typeof(TimeOnlyJsonConverter))]
-        public TimeOnly OpeningHour { get; set; }
-
-        [JsonConverter(typeof(TimeOnlyJsonConverter))]
-        public TimeOnly ClosingHour { get; set; }
-        public DayOfWeek DayOfWeek { get; set; }
-    }
-
-    public class TimeOnlyJsonConverter : JsonConverter<TimeOnly>
-    {
-        private const string TimeFormat = "HH:mm"; // ISO 8601 time format
-
-        public override void WriteJson(JsonWriter writer, TimeOnly value, JsonSerializer serializer)
-        {
-            writer.WriteValue(value.ToString(TimeFormat));
-        }
-
-        public override TimeOnly ReadJson(JsonReader reader, Type objectType, TimeOnly existingValue, bool hasExistingValue, JsonSerializer serializer)
-        {
-            return TimeOnly.ParseExact((string)reader.Value, TimeFormat);
-        }
+        [Key]
+        public int ScheduleId { get; set; }
+        [ForeignKey("ScheduleId")]
+        public Schedule Schedule { get; set; } = null!;
     }
 }
-

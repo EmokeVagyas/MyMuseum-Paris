@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Domain.Entities
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    [Table("museum_features")]
     public class MuseumFeature
     {
-        public int FeatureID { get; set; }
+        [Key]
+        public int Id { get; set; }
         public required string FeatureType { get; set; }
 
 

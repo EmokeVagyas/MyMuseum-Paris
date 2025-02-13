@@ -1,12 +1,23 @@
-﻿namespace Backend.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Backend.Domain.Entities
 {
+    [Table("user_questionnaire_responses")]
     public class UserQuestionnaireResponse
     {
-        public int UserID { get; set; }
-        public int FeatureID { get; set; }
-        public int OptionID { get; set; }
+        [Key]
+        public int UserId { get; set; }
+        [Key]
+        public int FeatureId { get; set; }
+        [Key]
+        public int OptionId { get; set; }
+
+        [ForeignKey("UserId")]
         public required User User { get; set; }
+        [ForeignKey("FeatureId")]
         public required MuseumFeature MuseumFeature { get; set; }
+        [ForeignKey("OptionId")]
         public required MuseumFeatureOption MuseumFeatureOption { get; set; }
     }
 }

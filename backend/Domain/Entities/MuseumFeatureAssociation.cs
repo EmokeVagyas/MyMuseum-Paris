@@ -1,14 +1,22 @@
-﻿namespace Backend.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Backend.Domain.Entities
 {
+    [Table("museum_feature_associations")]
     /// <summary>
     /// Join Table
     /// </summary>
     public class MuseumFeatureAssociation
     {
-        public int MuseumID { get; set; }
-        public int MuseumFeatureOptionID { get; set; }
+        [Key]
+        public int MuseumId { get; set; }
+        [ForeignKey("MuseumId")]
+        public Museum Museum { get; set; }
 
-        public required Museum Museum { get; set; }
-        public required MuseumFeatureOption MuseumFeatureOption { get; set; }
+        [Key]
+        public int MuseumFeatureOptionId { get; set; }
+        [ForeignKey("MuseumFeatureOptionId")]
+        public MuseumFeatureOption MuseumFeatureOption { get; set; }
     }
 }
