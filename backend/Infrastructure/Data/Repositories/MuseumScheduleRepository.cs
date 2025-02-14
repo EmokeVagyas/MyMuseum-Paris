@@ -33,7 +33,8 @@ namespace Backend.Infrastructure.Data.Repositories
 
         public void DeleteMuseumSchedule(int museumId)
         {
-            var museumSchedule = GetMuseumSchedule(museumId);
+            var museumSchedule = _context.MuseumSchedules
+                .FirstOrDefault(ms => ms.MuseumId == museumId);
             if (museumSchedule != null)
             {
                 _context.MuseumSchedules.Remove(museumSchedule);

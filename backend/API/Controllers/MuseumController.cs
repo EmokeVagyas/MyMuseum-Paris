@@ -1,19 +1,25 @@
 ﻿using AutoMapper;
-using Backend.Application.DTOs;
+using Backend.API.DTOs.Responses;
 using Backend.Application.Interfaces;
-using Backend.Application.Services;
+using Backend.Application.UseCases.Musem.GetMuseums;
+using Backend.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.API.Controllers
 {
     [Route("api/museums")]
     [ApiController]
-    public class MuseumController(IMapper _mapper, IMuseumService _museumService) : ControllerBase
+    public class MuseumController(
+        IMapper _mapper, 
+        IGetMuseumUseCase _getMuseumUseCase,
+        IGetMuseumsUseCase _getAllMuseumsUseCase,
+        IGetMuseumTimetableUseCase _getMuseumTimeTableUseCase 
+    ) : ControllerBase
     {
         [HttpGet("{id}")]
-        public IActionResult GetMuseum(int id)
+        public Task<IActionResult> GetMuseum(int id)
         {
-            var museum = _museumService.GetMuseumById(id);
+            var museum = await _getMuseumUseCase.ExecuteAsync(id);
             if (museum == null)
             {
                 return NotFound(new { message = "Museum not found" });
@@ -24,11 +30,27 @@ namespace Backend.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllMuseums()
+        public async Task<IActionResult> GetAllMuseums()
         {
-            var museums = _museumService.GetAllMuseums();
-            //var museumDtos = _mapper.Map<List<MuseumDto>>(museums);
-            return Ok(museums);
+            var museums = await _getAllMuseumsUseCase.ExecuteAsync();
+            var museumDtos = _mapper.Map<GetMuseumsResponse>(museums);
+
+            return Ok(museumDtos);
+        }
+
+        [HttpGet("{id}/timetable")]
+        public async Task<IActionResult> GetMuseumTimetable(int id)
+        {
+            var timetable = await _getMuseumTimeTableUseCase.ExecuteAsync(id);
+            if (timetable == null)
+            {
+                return NotFound(new 
+                { 
+                    Message = "Timetable not found" 
+                });
+            }
+
+            return Ok(timetable);
         }
     }
 }

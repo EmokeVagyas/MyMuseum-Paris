@@ -1,4 +1,4 @@
-﻿using Backend.Application.DTOs;
+﻿using Backend.Application.DTOs.Seed;
 using Backend.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

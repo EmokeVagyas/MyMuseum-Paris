@@ -1,7 +1,7 @@
 ﻿using Backend.Domain.Entities;
 using Newtonsoft.Json;
 
-namespace Backend.Application.DTOs
+namespace Backend.Application.DTOs.Seed
 {
     public class ConditionDto
     {

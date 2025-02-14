@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Backend.Application.DTOs;
 using Backend.Application.Services;
 using AutoMapper;
 using Backend.Domain.Entities;
+using Backend.Application.DTOs.Seed;
 
 namespace Backend.Api.Controllers
 {

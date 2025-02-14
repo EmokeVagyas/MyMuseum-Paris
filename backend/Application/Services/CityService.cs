@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Backend.Application.DTOs;
 using Backend.Application.Interfaces;
 using Backend.Domain.Entities;
 using Backend.Domain.Interfaces;
@@ -7,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Backend.Infrastructure.Data.Repositories;
+using Backend.Application.DTOs.Seed;
 
 public class CityService : ICityService
 {

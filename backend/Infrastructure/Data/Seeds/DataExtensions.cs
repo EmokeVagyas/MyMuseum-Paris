@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Backend.Domain.Entities;
 using Newtonsoft.Json;
-using Backend.Application.DTOs;
 using AutoMapper;
+using Backend.Application.DTOs.Seed;
 
 namespace Backend.Infrastructure.Data.Seeds
 {

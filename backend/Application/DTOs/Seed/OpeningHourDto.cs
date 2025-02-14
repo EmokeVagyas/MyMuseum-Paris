@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Backend.Domain.Entities;
 
-namespace Backend.Application.DTOs
+namespace Backend.Application.DTOs.Seed
 {
     public class OpeningHourDto
     {

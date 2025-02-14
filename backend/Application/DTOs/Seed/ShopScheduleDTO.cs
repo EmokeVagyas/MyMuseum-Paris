@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Backend.Application.DTOs
+namespace Backend.Application.DTOs.Seed
 {
     public class ShopScheduleDto
     {
@@ -11,6 +11,6 @@ namespace Backend.Application.DTOs
         public bool IsFree { get; set; }
         public bool IsClosed { get; set; }
         public string? Date { get; set; }
-        public string? Description { get; set; } 
+        public string? Description { get; set; }
     }
 }

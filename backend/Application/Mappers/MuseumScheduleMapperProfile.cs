@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Backend.Domain.Entities;
-using Backend.Application.DTOs;
+using Backend.Application.DTOs.Seed;
 
 namespace Backend.Application.Mappers
 {

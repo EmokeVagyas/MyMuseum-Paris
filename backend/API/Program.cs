@@ -7,6 +7,7 @@ using Backend.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Backend.Infrastructure.Data.Seeds;
 using Backend.Infrastructure.Data.Repositories;
+using Backend.Application.UseCases.Musem.GetMuseums;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +41,10 @@ builder.Services.AddScoped<IMuseumRepository, MuseumRepository>();
 builder.Services.AddScoped<IMuseumService, MuseumService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ICityService, CityService>();
+
+// UseCases
+builder.Services.AddScoped<IGetMuseumUseCase, GetMuseumUseCase>();
+
 
 var app = builder.Build();
 

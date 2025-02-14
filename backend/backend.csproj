@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="API\NewFolder\" />
+    <Folder Include="API\DTOs\Requests\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Backend.Application.DTOs
+namespace Backend.Application.DTOs.Seed
 {
     public class ShopDto
     {

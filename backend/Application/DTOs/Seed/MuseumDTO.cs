@@ -1,7 +1,7 @@
 ﻿using Backend.Domain.Entities;
 using Backend.Domain.Enums;
 
-namespace Backend.Application.DTOs
+namespace Backend.Application.DTOs.Seed
 {
     public class MuseumDto
     {
@@ -14,7 +14,6 @@ namespace Backend.Application.DTOs
         public required List<Language> Languages { get; set; }
         public bool GuidedTours { get; set; }
         public bool AudioGuide { get; set; }
-
         public int CityId { get; set; }
     }
 }
