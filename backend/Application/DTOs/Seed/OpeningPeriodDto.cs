@@ -6,11 +6,11 @@ namespace Backend.Application.DTOs.Seed
     public class OpeningPeriodDto
     {
         [JsonConverter(typeof(MonthDayJsonConverter))]
-        public required DateOnly StartDate { get; set; }
+        public DateOnly StartDate { get; set; }
         [JsonConverter(typeof(MonthDayJsonConverter))]
-        public required DateOnly EndDate { get; set; }
-        public required string Description { get; set; }
-        public required List<OpeningHourDto> OpeningHours { get; set; }
+        public DateOnly EndDate { get; set; }
+        public string Description { get; set; }
+        public List<OpeningHourDto> OpeningHours { get; set; }
         public TimeSpan? LastEntryOffset { get; set; }
         public TimeSpan? RoomClearingOffset { get; set; }
     }

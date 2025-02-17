@@ -81,7 +81,7 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Salon Denon",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },,
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
@@ -848,7 +848,7 @@
         },
         {
           "Id": 3,
-          "StartDater": "10-13",
+          "StartDate": "10-13",
           "EndDate": "11-03",
           "Description": "Paris Zoo 3",
           "OpeningHours": [
@@ -1250,7 +1250,7 @@
           "Id": 28,
           "StartDate": "06-21",
           "EndDate": "06-22",
-          "Description": "Paris Zoo 28"
+          "Description": "Paris Zoo 28",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
