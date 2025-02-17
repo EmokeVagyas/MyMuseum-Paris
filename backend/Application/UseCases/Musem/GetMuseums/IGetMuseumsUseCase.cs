@@ -2,8 +2,8 @@
 
 namespace Backend.Application.UseCases.Musem.GetMuseums
 {
-    public interface IGetMuseumUseCase
+    public interface IGetMuseumsUseCase
     {
-        Task<IEnumerable<GetMuseumDto>> ExecuteAsync(int museumId);
+        Task<IEnumerable<GetMuseumDto>> ExecuteAsync();
     }
 }

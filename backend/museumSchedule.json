@@ -11,7 +11,6 @@
           "Description": "Standard annual schedule for Musée du Louvre",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true},
             { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "21:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:00", "IsFree": false },
@@ -56,7 +55,6 @@
               "Description": "Standard annual schedule for Librairie-Boutique",
               "OpeningHours": [
                 { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:30" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:30" },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:30" },
                 { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "21:45" },
@@ -83,8 +81,7 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Salon Denon",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },,
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
@@ -112,7 +109,6 @@
               "Description": "Standard annual schedule for Comptoir de Vente Denon",
               "OpeningHours": [
                 { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
@@ -140,7 +136,6 @@
               "Description": "Standard annual schedule for Comptoir Napoleon",
               "OpeningHours": [
                 { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:30" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30" },
                 { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "21:30" },
@@ -169,7 +164,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Musée d'Orsay",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "21:45", "IsFree": false },
@@ -212,7 +206,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for D'Orsay Museum Shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:30" },
                 { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:30" },
                 { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "21:10" },
@@ -242,7 +235,6 @@
           "Description": "Standard annual schedule for Musée de l'Orangerie",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "18:00", "IsFree": false },
@@ -291,7 +283,6 @@
               "Description": "Standard annual schedule for L'Orangerie Museum Shop",
               "OpeningHours": [
                 { "DayOfWeek": 1, "OpeningTime": "09:00", "ClosingTime": "17:45" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:45" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:45" },
                 { "DayOfWeek": 5, "OpeningTime": "09:00", "ClosingTime": "17:45" },
@@ -369,7 +360,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Musée Picasso",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
@@ -425,7 +415,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Picasso Museum Shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00" },
@@ -468,7 +457,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Musée Rodin",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:30", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:30", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:30", "IsFree": false },
@@ -525,7 +513,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Rodin Museum Shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
@@ -567,7 +554,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Petit Palais",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": true, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
@@ -598,7 +584,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Petit Palais Museum Shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
@@ -631,7 +616,6 @@
           "Description": "Standard annual schedule for Grande Galerie de l'Évolution",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
@@ -660,8 +644,7 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Grande Galerie de l’Évolution shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": "10:00",  "ClosingTime": "18:00" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00" },
                 { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00" },
@@ -691,7 +674,6 @@
           "Description": "Standard annual schedule for Galerie de Paléontologie et d’Anatomie comparée",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
@@ -720,8 +702,7 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Galerie de Paléontologie et d’Anatomie comparée shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
+                { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00" },
                 { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00" },
@@ -751,7 +732,6 @@
           "Description": "Standard annual schedule for Galerie de Géologie et de Minéralogie",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
@@ -781,7 +761,6 @@
           "Description": "Standard annual schedule for Musée de l'Homme", 
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "11:00", "ClosingTime": "19:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 3, "OpeningTime": "11:00", "ClosingTime": "19:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "11:00", "ClosingTime": "19:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "11:00", "ClosingTime": "19:00", "IsFree": false },
@@ -812,7 +791,6 @@
               "Description": "Standard annual schedule for Musée de l'Homme shop",
               "OpeningHours": [
                 { "DayOfWeek": 1, "OpeningTime": "11:00", "ClosingTime": "19:00" },
-                { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 3, "OpeningTime": "11:00", "ClosingTime": "19:00" },
                 { "DayOfWeek": 4, "OpeningTime": "11:00", "ClosingTime": "19:00" },
                 { "DayOfWeek": 5, "OpeningTime": "11:00", "ClosingTime": "19:00" },
@@ -838,31 +816,25 @@
       "OpeningPeriods": [
         {
           "Id": 1,
-          "Periods": [
-            { "StartDate": "01-06", "EndDate": "02-02" },
-            { "StartDate": "11-03", "EndDate": "11-03" }
-          ],
-          "Description": "Closed season for Paris Zoo",
+          "StartDate": "01-01",
+          "EndDate": "01-05",
+          "Description": "Paris Zoo 1",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 3, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 4, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 5, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 6, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
-            { "DayOfWeek": 7, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true }
+            { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false }
           ],
           "LastEntryOffset": "-01:00"
         },
         {
           "Id": 2,
-          "Periods": [
-            { "StartSate": "01-01", "EndDate": "01-05" },
-            { "StartDate": "02-03", "EndDate": "03-30" },
-            { "StartDate": "10-13", "EndDate": "11-03" },
-            { "StartDate": "11-05", "EndDate": "12-31" }
-          ],
-          "Description": "Fall-Winter season for Paris Zoo",
+          "StartDate": "02-03",
+          "EndDate": "03-30",
+          "Description": "Paris Zoo 2",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
@@ -876,26 +848,42 @@
         },
         {
           "Id": 3,
-          "Periods": [
-            { "StartDate": "03-31", "EndDate": "04-04" },
-            { "StartDate": "05-05", "EndDate": "05-07" },
-            { "StartDate": "05-12", "EndDate": "05-16" },
-            { "StartDate": "05-19", "EndDate": "05-23" },
-            { "StartDate": "05-26", "EndDate": "05-28" },
-            { "StartDate": "06-02", "EndDate": "06-06" },
-            { "StartDate": "06-10", "EndDate": "06-13" },
-            { "StartDate": "06-16", "EndDate": "06-20" },
-            { "StartDate": "06-23", "EndDate": "06-27" },
-            { "StartDate": "06-30", "EndDate": "07-04" },
-            { "StartDate": "09-01", "EndDate": "09-05" },
-            { "StartDate": "09-08", "EndDate": "09-12" },
-            { "StartDate": "09-15", "EndDate": "09-19" },
-            { "StartDate": "09-22", "EndDate": "09-26" },
-            { "StartDate": "09-29", "EndDate": "10-03" },
-            { "StartDate": "10-06", "EndDate": "10-10" }
-          ],
-          "Description": "Spring-Summer earlier closing for Paris Zoo",
+          "StartDater": "10-13",
+          "EndDate": "11-03",
+          "Description": "Paris Zoo 3",
           "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 4,
+          "StartDate": "11-05",
+          "EndDate": "12-31",
+          "Description": "Paris Zoo 4",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 5,
+          "StartDate": "03-31",
+          "EndDate": "04-04",
+          "Description": "Paris Zoo 5",
+          "OpeningHours":  [
             { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
@@ -907,32 +895,250 @@
           "LastEntryOffset": "-01:00"
         },
         {
-          "Id": 4,
-          "Periods": [
-            { "StartDate": "04-05", "EndDate": "05-04" },
-            { "StartDate": "05-08", "EndDate": "05-11" },
-            { "StartDate": "05-17", "EndDate": "05-18" },
-            { "StartDate": "05-24", "EndDate": "05-25" },
-            { "StartDate": "05-29", "EndDate": "06-01" },
-            { "StartDate": "06-07", "EndDate": "06-09" },
-            { "StartDate": "06-14", "EndDate": "06-15" },
-            { "StartDate": "06-21", "EndDate": "06-22" },
-            { "StartDate": "06-28", "EndDate": "06-29" },
-            { "StartDate": "07-05", "EndDate": "07-09" },
-            { "StartDate": "07-11", "EndDate": "07-16" },
-            { "StartDate": "07-18", "EndDate": "07-23" },
-            { "StartDate": "07-25", "EndDate": "07-30" },
-            { "StartDate": "08-01", "EndDate": "08-06" },
-            { "StartDate": "08-08", "EndDate": "08-13" },
-            { "StartDate": "08-15", "EndDate": "08-31" },
-            { "StartDate": "09-06", "EndDate": "09-07" },
-            { "StartDate": "09-13", "EndDate": "09-14" },
-            { "StartDate": "09-20", "EndDate": "09-21" },
-            { "StartDate": "09-27", "EndDate": "09-28" },
-            { "StartDate": "10-04", "EndDate": "10-05" },
-            { "StartDate": "10-11", "EndDate": "10-12" }
+          "Id": 6,
+          "StartDate": "05-05",
+          "EndDate": "05-07",
+          "Description": "Paris Zoo 6",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
           ],
-          "Description": "Spring-Summer later closing for Paris Zoo",
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 7,
+          "StartDate": "05-12",
+          "EndDate": "05-16",
+          "Description": "Paris Zoo 7",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 8,
+          "StartDate": "05-19",
+          "EndDate": "05-23",
+          "Description": "Paris Zoo 8",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 9,
+          "StartDate": "05-26",
+          "EndDate": "05-28",
+          "Description": "Paris Zoo 9",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 10,
+          "StartDate": "06-02",
+          "EndDate": "06-06",
+          "Description": "Paris Zoo 10",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 11,
+          "StartDate": "06-10",
+          "EndDate": "06-13",
+          "Description": "Paris Zoo 11",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 12,
+          "StartDate": "06-16",
+          "EndDate": "06-20",
+          "Description": "Paris Zoo 12",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 13,
+          "StartDate": "06-23",
+          "EndDate": "06-27",
+          "Description": "Paris Zoo 13",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 14,
+          "StartDate": "06-30",
+          "EndDate": "07-04",
+          "Description": "Paris Zoo 14",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 15,
+          "StartDate": "09-01",
+          "EndDate": "09-05",
+          "Description": "Paris Zoo 15",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 16,
+          "StartDate": "09-08",
+          "EndDate": "09-12",
+          "Description": "Paris Zoo 16",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 17,
+          "StartDate": "09-15",
+          "EndDate": "09-19",
+          "Description": "Paris Zoo 17",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 18,
+          "StartDate": "09-22",
+          "EndDate": "09-26",
+          "Description": "Paris Zoo 18",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 19,
+          "StartDate": "09-29",
+          "EndDate": "10-03",
+          "Description": "Paris Zoo 19",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 20,
+          "StartDate": "10-06",
+          "EndDate": "10-10",
+          "Description": "Paris Zoo 20",
+          "OpeningHours":  [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "18:00", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 21,
+          "StartDate": "04-05",
+          "EndDate": "05-04",
+          "Description": "Paris Zoo 21",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
@@ -945,16 +1151,426 @@
           "LastEntryOffset": "-01:00"
         },
         {
-          "Id": 5,
-          "Periods": [
-            { "StartDate": "07-10", "EndDate": "07-10" },
-            { "SatrtDate": "07-17", "EndDate": "07-17" },
-            { "StartDate": "07-24", "EndDate": "07-24" },
-            { "StartDate": "07-31", "EndDate": "07-31" },
-            { "StartDate": "08-07", "EndDate": "08-07" },
-            { "StartDate": "08-14", "EndDate": "08-14" }
+          "Id": 22,
+          "StartDate": "05-08",
+          "EndDate": "05-11",
+          "Description": "Paris Zoo 22",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
           ],
-          "Description": "Late night opening for Paris Zoo",
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 23,
+          "StartDate": "05-17",
+          "EndDate": "05-18",
+          "Description": "Paris Zoo 23",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 24,
+          "StartDate": "05-24",
+          "EndDate": "05-25",
+          "Description": "Paris Zoo 24",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 25,
+          "StartDate": "05-29",
+          "EndDate": "06-01",
+          "Description": "Paris Zoo 25",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 26,
+          "StartDate": "06-07",
+          "EndDate": "06-09",
+          "Description": "Paris Zoo 26",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 27,
+          "StartDate": "06-14",
+          "EndDate": "06-15",
+          "Description": "Paris Zoo 27",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 28,
+          "StartDate": "06-21",
+          "EndDate": "06-22",
+          "Description": "Paris Zoo 28"
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 29,
+          "StartDate": "06-28",
+          "EndDate": "06-29",
+          "Description": "Paris Zoo 29",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 30,
+          "StartDate": "07-05",
+          "EndDate": "07-09",
+          "Description": "Paris Zoo 30",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 31,
+          "StartDate": "07-11",
+          "EndDate": "07-16",
+          "Description": "Paris Zoo 31",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 32,
+          "StartDate": "07-18",
+          "EndDate": "07-23",
+          "Description": "Paris Zoo 32",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 33,
+          "StartDate": "07-25",
+          "EndDate": "07-30",
+          "Description": "Paris Zoo 33",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 34,
+          "StartDate": "08-01",
+          "EndDate": "08-06",
+          "Description": "Paris Zoo 34",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 35,
+          "StartDate": "08-08",
+          "EndDate": "08-13",
+          "Description": "Paris Zoo 35",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 36,
+          "StartDate": "08-15",
+          "EndDate": "08-31",
+          "Description": "Paris Zoo 36",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 37,
+          "StartDate": "09-06",
+          "EndDate": "09-07",
+          "Description": "Paris Zoo 37",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 38,
+          "StartDate": "09-13",
+          "EndDate": "09-14",
+          "Description": "Paris Zoo 38",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 39,
+          "StartDate": "09-20",
+          "EndDate": "09-21",
+          "Description": "Paris Zoo 39",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 40,
+          "StartDate": "09-27",
+          "EndDate": "09-28",
+          "Description": "Paris Zoo 40",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 41,
+          "StartDate": "10-04",
+          "EndDate": "10-05",
+          "Description": "Paris Zoo 41",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 42,
+          "StartDate": "10-11",
+          "EndDate": "10-12",
+          "Description": "Paris Zoo 42",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "19:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-01:00"
+        },
+        {
+          "Id": 43,
+          "StartDate": "07-10",
+          "EndDate": "07-10",
+          "Description": "Paris Zoo 43",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-02:30"
+        },
+        {
+          "Id": 44,
+          "StartDate": "07-17",
+          "EndDate": "07-17",
+          "Description": "Paris Zoo 44",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-02:30"
+        },
+        {
+          "Id": 45,
+          "StartDate": "07-24",
+          "EndDate": "07-24",
+          "Description": "Paris Zoo 45",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-02:30"
+        },
+        {
+          "Id": 46,
+          "StartDate": "07-31",
+          "EndDate": "07-31",
+          "Description": "Paris Zoo 46",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-02:30"
+        },
+        {
+          "Id": 47,
+          "StartDate": "08-07",
+          "EndDate": "08-07",
+          "Description": "Paris Zoo 47",
+          "OpeningHours": [
+            { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 5, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 6, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
+            { "DayOfWeek": 7, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false }
+          ],
+          "LastEntryOffset": "-02:30"
+        },
+        {
+          "Id": 48,
+          "StartDate": "08-14",
+          "EndDate": "08-14",
+          "Description": "Paris Zoo 48",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "23:30", "IsFree": false },
@@ -1048,7 +1664,6 @@
           "Description": "Standard annual schedule for Grandes Serres du Jardin des Plantes",
           "OpeningHours": [
             { "DayOfWeek": 1, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
-            { "DayOfWeek": 2, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
             { "DayOfWeek": 5, "OpeningTime": "10:00", "ClosingTime": "17:00", "IsFree": false },
@@ -1133,7 +1748,6 @@
           "EndDate": "03-31",
           "Description": "Winter season for Château de Versailles",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:00", "ClosingTime": "17:30", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "17:30", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "17:30", "IsFree": false },
@@ -1149,7 +1763,6 @@
           "EndDate": "10-31",
           "Description": "Summer season for Château de Versailles",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true, "IsFree": false },
             { "DayOfWeek": 2, "OpeningTime": "09:00", "ClosingTime": "18:30", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "18:30", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "18:30", "IsFree": false },
@@ -1191,7 +1804,6 @@
               "EndDate": "03-31",
               "Description": "Winter season for Librairie des Princes",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
@@ -1206,7 +1818,6 @@
               "EndDate": "10-31",
               "Description": "Summer season for Librairie des Princes",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "10:30", "ClosingTime": "18:15" },
                 { "DayOfWeek": 3, "OpeningTime": "10:30", "ClosingTime": "18:15" },
                 { "DayOfWeek": 4, "OpeningTime": "10:30", "ClosingTime": "18:15" },
@@ -1234,7 +1845,6 @@
               "EndDate": "03-31",
               "Description": "Winter season for Boutique du Pavillon Dufour",
               "OpeningHours":  [
-                 { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
@@ -1249,7 +1859,6 @@
               "EndDate": "10-31",
               "Description": "Summer season for Boutique du Pavillon Dufour",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
@@ -1277,7 +1886,6 @@
               "EndDate": "03-31",
               "Description": "Winter season for Boutique Cour de Marbre",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 3, "OpeningTime": "09:30", "ClosingTime": "17:15" },
                 { "DayOfWeek": 4, "OpeningTime": "09:30", "ClosingTime": "17:15" },
@@ -1292,7 +1900,6 @@
               "EndDate": "10-31",
               "Description": "Summer season for Boutique Cour de Marbre",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "10:15", "ClosingTime": "18:00" },
                 { "DayOfWeek": 3, "OpeningTime": "10:15", "ClosingTime": "18:00" },
                 { "DayOfWeek": 4, "OpeningTime": "10:15", "ClosingTime": "18:00" },
@@ -1315,7 +1922,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Comptoir de la Chapelle",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsClosed": true },
                 { "DayOfWeek": 2, "OpeningTime": "09:00", "ClosingTime": "16:45" },
                 { "DayOfWeek": 3, "OpeningTime": "09:00", "ClosingTime": "16:45" },
                 { "DayOfWeek": 4, "OpeningTime": "09:00", "ClosingTime": "16:45" },
@@ -1345,7 +1951,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Musée d'Art Moderne de Paris",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": true },
@@ -1402,7 +2007,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Musée Carnavalet - Histoire de Paris",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": true },
@@ -1444,7 +2048,6 @@
               "EndDate": "12-31",
               "Description": "Standard annual schedule for Musée Carnavalet - Histoire de Paris shop",
               "OpeningHours": [
-                { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false },
                 { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
                 { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": true },
                 { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": true },
@@ -1487,7 +2090,6 @@
           "EndDate": "12-31",
           "Description": "Standard annual schedule for Maison de Balzac",
           "OpeningHours": [
-            { "DayOfWeek": 1, "OpeningTime": null, "ClosingTime": null, "IsFree": false, "IsClosed": true },
             { "DayOfWeek": 2, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 3, "OpeningTime": "10:00", "ClosingTime": "18:00", "IsFree": false },
             { "DayOfWeek": 4, "OpeningTime": "10:00", "ClosingTime": "21:30", "IsFree": false },

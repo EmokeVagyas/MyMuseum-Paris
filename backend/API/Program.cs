@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Infrastructure.Data.Seeds;
 using Backend.Infrastructure.Data.Repositories;
 using Backend.Application.UseCases.Musem.GetMuseums;
+using Backend.Application.UseCases.Musem.GetMuseumSchedule;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,8 +44,9 @@ builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ICityService, CityService>();
 
 // UseCases
-builder.Services.AddScoped<IGetMuseumUseCase, GetMuseumUseCase>();
-
+//builder.Services.AddScoped<IGetMuseumUseCase, GetMuseumUseCase>();
+builder.Services.AddScoped<IGetMuseumsUseCase, GetMuseumsUseCase>();
+builder.Services.AddScoped<IGetMuseumSchedule, GetMuseumSchedule>();
 
 var app = builder.Build();
 

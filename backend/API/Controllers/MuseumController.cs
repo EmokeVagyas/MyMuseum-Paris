@@ -2,6 +2,7 @@
 using Backend.API.DTOs.Responses;
 using Backend.Application.Interfaces;
 using Backend.Application.UseCases.Musem.GetMuseums;
+using Backend.Application.UseCases.Musem.GetMuseumSchedule;
 using Backend.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,23 +12,23 @@ namespace Backend.API.Controllers
     [ApiController]
     public class MuseumController(
         IMapper _mapper, 
-        IGetMuseumUseCase _getMuseumUseCase,
+        //IGetMuseumUseCase _getMuseumUseCase,
         IGetMuseumsUseCase _getAllMuseumsUseCase,
-        IGetMuseumTimetableUseCase _getMuseumTimeTableUseCase 
+        IGetMuseumSchedule _getMuseumScheduleUseCase 
     ) : ControllerBase
     {
-        [HttpGet("{id}")]
-        public Task<IActionResult> GetMuseum(int id)
-        {
-            var museum = await _getMuseumUseCase.ExecuteAsync(id);
-            if (museum == null)
-            {
-                return NotFound(new { message = "Museum not found" });
-            }
+        //[HttpGet("{id}")]
+        //public Task<IActionResult> GetMuseum(int id)
+        //{
+        //    var museum = await _getMuseumUseCase.ExecuteAsync(id);
+        //    if (museum == null)
+        //    {
+        //        return NotFound(new { message = "Museum not found" });
+        //    }
 
-            //var museumDto = _mapper.Map<MuseumDto>(museum);
-            return Ok(museum);
-        }
+        //    //var museumDto = _mapper.Map<MuseumDto>(museum);
+        //    return Ok(museum);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetAllMuseums()
@@ -39,9 +40,9 @@ namespace Backend.API.Controllers
         }
 
         [HttpGet("{id}/timetable")]
-        public async Task<IActionResult> GetMuseumTimetable(int id)
+        public async Task<IActionResult> GetMuseumTimetable(int id, DateOnly fromDate, DateOnly toDate)
         {
-            var timetable = await _getMuseumTimeTableUseCase.ExecuteAsync(id);
+            var timetable = await _getMuseumScheduleUseCase.ExecuteAsync(id, fromDate, toDate);
             if (timetable == null)
             {
                 return NotFound(new 
